@@ -4,7 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/welcome_screen_background"
     tools:context=".Activity_WelcomeScreen">
+
+
+    <ImageView
+        android:id="@+id/side_circle_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/side_circle_left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <ImageView
+        android:id="@+id/side_circle_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/side_circle_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/welcome_txt_welcome_screen"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/white"
+        android:textSize="42sp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/side_circle_right"
+        app:layout_constraintEnd_toStartOf="@+id/side_circle_right"
+        app:layout_constraintStart_toEndOf="@+id/side_circle_left"
+        app:layout_constraintTop_toTopOf="@+id/side_circle_right" />
+
+
+    <ImageView
+        android:id="@+id/curved_wedge_left"
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:src="@drawable/curved_wedge_left"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.851" />
+
+
+    <ImageView
+        android:id="@+id/curved_wedges_right"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/curved_wedges_right"
+
+        app:layout_constraintBottom_toBottomOf="@+id/curved_wedge_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/play_button"
+        android:padding="5dp"
+
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/play_txt_welcome_screen"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.521" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
