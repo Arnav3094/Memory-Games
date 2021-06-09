@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MemoryGames</string>
+    <string name="welcome_txt_welcome_screen">Welcome!</string>
+    <string name="play_txt_welcome_screen">Play</string>
 </resources>
