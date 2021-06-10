@@ -24,7 +24,7 @@ public class Activity_WelcomeScreen extends AppCompatActivity {
 
     Button playButton;
 
-    Animation slideInRight, slideInLeft, slideDownFromTop, slideOutToBottom;
+    Animation slideInRight, slideInLeft, slideDownFromTop, slideOutToBottom, slideOutToLeft, slideOutToRight, slideOutToTop;
 
     Intent intentWelcomeToMain;
 
@@ -45,8 +45,10 @@ public class Activity_WelcomeScreen extends AppCompatActivity {
         slideInRight = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
         slideInLeft = AnimationUtils.loadAnimation(this, R.anim.slide_in_left);
         slideDownFromTop = AnimationUtils.loadAnimation(this, R.anim.slide_down_from_top);
-
-
+        slideOutToBottom = AnimationUtils.loadAnimation(this, R.anim.slide_out_to_bottom);
+        slideOutToLeft = AnimationUtils.loadAnimation(this, R.anim.slide_out_to_left);
+        slideOutToRight = AnimationUtils.loadAnimation(this, R.anim.slide_out_to_right);
+        slideOutToTop = AnimationUtils.loadAnimation(this, R.anim.slide_out_to_top);
 
         // Setting anims
         sideCircleRight.setAnimation(slideInRight);
@@ -59,36 +61,21 @@ public class Activity_WelcomeScreen extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                slideOutToBottom = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_out_to_bottom);
-                // Here you will put the anims for each element
-                playButton.setAnimation(slideOutToBottom);
                 Log.d(TAG, "onClick: button clicked");
-//                curvedWedgeLeft.setAnimation();
-//                curvedWedgesRight.setAnimation();
-//                welcomeText.setAnimation();
-//                sideCircleLeft.setAnimation();
-//                sideCircleRight.setAnimation();
 
-//                Thread intentThread = new Thread(){
-//                    public void run(){
-//                        try {
-//                            Thread.sleep(2000);
-//                            startActivity(intentWelcomeToMain);
-//                            Log.d(TAG, "Thread Started");
-//                        } catch(Exception e){
-//                            Log.d(TAG, "thread run: Exception -> " + e);
-//                        }
-//                    }
-//                };
+                // Here you will put the anims for each element
+                Log.d(TAG, "onClick: animations started");
+                playButton.startAnimation(slideOutToBottom);
+                curvedWedgeLeft.startAnimation(slideOutToLeft);
+                curvedWedgesRight.startAnimation(slideOutToRight);
+                welcomeText.startAnimation(slideOutToTop);
+                sideCircleLeft.startAnimation(slideOutToLeft);
+                sideCircleRight.startAnimation(slideOutToRight);
 
-/*                intentWelcomeToMain = new Intent(getApplicationContext(), MainActivity.class);
+                intentWelcomeToMain = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intentWelcomeToMain);
-
                 // This will take the actual view anims
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);*/
-
-                //TODO: Set Animations for all elements to leave the screen when activity is changing
-
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
