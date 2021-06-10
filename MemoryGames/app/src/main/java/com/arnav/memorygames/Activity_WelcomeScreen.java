@@ -12,8 +12,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.lang.reflect.Method;
-
 public class Activity_WelcomeScreen extends AppCompatActivity {
 
     private static final String TAG = "Activity_WelcomeScreen";
