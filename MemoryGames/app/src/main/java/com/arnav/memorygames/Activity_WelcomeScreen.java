@@ -72,7 +72,7 @@ public class Activity_WelcomeScreen extends AppCompatActivity {
 
                 intentWelcomeToMain = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intentWelcomeToMain);
-                // This will take the actual view anims
+                // This will take the actual view animation
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
