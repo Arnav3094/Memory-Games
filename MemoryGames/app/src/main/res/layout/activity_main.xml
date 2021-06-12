@@ -11,21 +11,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
+
         app:layout_constraintBottom_toTopOf="@+id/guideline_top"
         app:layout_constraintEnd_toStartOf="@+id/guideline_left"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toTopOf="parent"
+
         app:srcCompat="@drawable/hamburger_button" />
+
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
+
         app:layout_constraintBottom_toTopOf="@+id/guideline_top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_right"
         app:layout_constraintTop_toTopOf="parent"
+
         app:srcCompat="@drawable/ic_help" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
@@ -48,21 +55,21 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.875" />
 
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bottom_nav_bar_background"
-        app:menu="@menu/menu_bottom_nav"
-        app:labelVisibilityMode="selected"
         app:itemIconTint="@drawable/bottom_nav_item_color"
-        app:itemTextColor="@drawable/bottom_nav_item_color"
         app:itemRippleColor="@color/darker_button_color"
-        android:fitsSystemWindows="true"
-
-
+        app:itemTextColor="@drawable/bottom_nav_item_color"
+        app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
+
+        app:menu="@menu/menu_bottom_nav"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
