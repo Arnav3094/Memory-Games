@@ -63,12 +63,14 @@ public class Activity_WelcomeScreen extends AppCompatActivity {
 
                 // Here you will put the anims for each element
                 Log.d(TAG, "onClick: animations started");
-                playButton.startAnimation(slideOutToBottom);
-                curvedWedgeLeft.startAnimation(slideOutToLeft);
-                curvedWedgesRight.startAnimation(slideOutToRight);
-                welcomeText.startAnimation(slideOutToTop);
-                sideCircleLeft.startAnimation(slideOutToLeft);
-                sideCircleRight.startAnimation(slideOutToRight);
+                animatePlayButton();
+
+//                playButton.startAnimation(slideOutToBottom);
+//                curvedWedgeLeft.startAnimation(slideOutToLeft);
+//                curvedWedgesRight.startAnimation(slideOutToRight);
+//                welcomeText.startAnimation(slideOutToTop);
+//                sideCircleLeft.startAnimation(slideOutToLeft);
+//                sideCircleRight.startAnimation(slideOutToRight);
 
                 intentWelcomeToMain = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intentWelcomeToMain);
@@ -77,5 +79,18 @@ public class Activity_WelcomeScreen extends AppCompatActivity {
             }
         });
 
+    }
+    public void animatePlayButton(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                playButton.startAnimation(slideOutToBottom);
+                curvedWedgeLeft.startAnimation(slideOutToLeft);
+                curvedWedgesRight.startAnimation(slideOutToRight);
+                welcomeText.startAnimation(slideOutToTop);
+                sideCircleLeft.startAnimation(slideOutToLeft);
+                sideCircleRight.startAnimation(slideOutToRight);
+            }
+        });
     }
 }
