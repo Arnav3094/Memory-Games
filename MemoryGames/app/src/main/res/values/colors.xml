@@ -12,4 +12,5 @@
     <color name="default_red">#ff5b5b</color>
     <color name="default_button_color">#763453</color>
     <color name="darker_button_color">#58253d</color>
+    <color name="green_section">#C3F1BE</color>
 </resources>
