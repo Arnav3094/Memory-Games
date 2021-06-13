@@ -22,17 +22,29 @@
 
 
     <ImageButton
+        android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
-
         app:layout_constraintBottom_toTopOf="@+id/guideline_top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_right"
-        app:layout_constraintTop_toTopOf="parent"
 
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_help" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="\?"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
@@ -60,9 +72,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bottom_nav_bar_background"
-        app:itemIconTint="@drawable/bottom_nav_item_color"
+        app:itemIconTint="@drawable/bottom_nav_item_color_selector"
         app:itemRippleColor="@color/darker_button_color"
-        app:itemTextColor="@drawable/bottom_nav_item_color"
+        app:itemTextColor="@drawable/bottom_nav_item_color_selector"
         app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
 
