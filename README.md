@@ -4,8 +4,7 @@ A bunch of memory games:
 
 	*card-based
 	*number-based (divyansh)
-	*word-based
-	*click-pattern based (not final)
+	*word-based (divyansh)
 
 Welcome Screen
 ---- play button --->
