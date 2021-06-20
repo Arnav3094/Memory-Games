@@ -30,6 +30,7 @@
             android:name=".Activity_WelcomeScreen"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
+            android:noHistory="true"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
