@@ -95,17 +95,4 @@ public class Activity_WelcomeScreen extends AppCompatActivity {
         });
 
     }
-    public void animatePlayButton(){
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                playButton.startAnimation(slideOutToBottom);
-                curvedWedgeLeft.startAnimation(slideOutToLeft);
-                curvedWedgesRight.startAnimation(slideOutToRight);
-                welcomeText.startAnimation(slideOutToTop);
-                sideCircleLeft.startAnimation(slideOutToLeft);
-                sideCircleRight.startAnimation(slideOutToRight);
-            }
-        });
-    }
 }
