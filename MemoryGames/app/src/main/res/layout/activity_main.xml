@@ -7,30 +7,30 @@
     android:background="@drawable/main_background"
     tools:context=".MainActivity">
 
+<!--    <ImageButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@null"-->
+
+<!--        app:layout_constraintBottom_toTopOf="@+id/guideline_top"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline_left"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+
+<!--        app:srcCompat="@drawable/hamburger_button" />-->
+
+
     <ImageButton
+        android:id="@+id/help_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+
         android:background="@null"
-
-        app:layout_constraintBottom_toTopOf="@+id/guideline_top"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_left"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent"
-
-        app:srcCompat="@drawable/hamburger_button" />
-
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_top"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_right"
-
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_help" />
 
     <TextView
@@ -41,34 +41,35 @@
         android:textColor="@color/white"
         android:textSize="25sp"
 
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/imageButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/help_icon"
+        app:layout_constraintEnd_toEndOf="@+id/help_icon"
+        app:layout_constraintStart_toStartOf="@+id/help_icon"
+        app:layout_constraintTop_toTopOf="@+id/help_icon" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.075" />
+        app:layout_constraintGuide_percent="0.07" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.125" />
+        app:layout_constraintGuide_percent="0.1125" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.875" />
+        app:layout_constraintGuide_percent="0.8875" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bottom_nav_bar_background"
@@ -76,12 +77,11 @@
         app:itemRippleColor="@color/darker_button_color"
         app:itemTextColor="@drawable/bottom_nav_item_color_selector"
         app:labelVisibilityMode="selected"
+
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
 
-        app:menu="@menu/menu_bottom_nav"
-        />
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/menu_bottom_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
