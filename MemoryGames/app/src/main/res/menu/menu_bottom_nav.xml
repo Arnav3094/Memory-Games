@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 <!--    This item exists only so there is no item selected by default in bottom_nav-->
-    <item
-        android:id="@+id/buffer_item_bottom"
-        android:title=""
-        android:visible="false"
-        />
+<!--    <item-->
+<!--        android:id="@+id/buffer_item_bottom"-->
+<!--        android:title=""-->
+<!--        android:visible="false"-->
+<!--        />-->
 
     <item
         android:id="@+id/tiles_bottom"
