@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MemoryGames</string>
+    <string name="welcome_txt_welcome_screen">Welcome!</string>
+    <string name="play_txt_welcome_screen">Play</string>
+    <string name="tiles_bottom">Tiles</string>
+    <string name="words_bottom">Words</string>
+    <string name="numbers_bottom">Numbers</string>
 </resources>

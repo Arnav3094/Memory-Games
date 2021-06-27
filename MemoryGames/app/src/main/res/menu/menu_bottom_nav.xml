@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    This item exists only so there is no item selected by default in bottom_nav-->
+    <item
+        android:id="@+id/buffer_item_bottom"
+        android:title=""
+        android:visible="false"
+        />
+
+    <item
+        android:id="@+id/tiles_bottom"
+        android:title="@string/tiles_bottom"
+        android:icon="@drawable/ic_grid"
+        />
+
+    <item
+        android:id="@+id/words_bottom"
+        android:title="@string/words_bottom"
+        android:icon="@drawable/ic_word"
+        />
+    <item
+        android:id="@+id/numbers_bottom"
+        android:title="@string/numbers_bottom"
+        android:icon="@drawable/ic_numbers"
+        />
+</menu>
