@@ -7,220 +7,163 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
+        <!--
+        TODO:
+        • add the type in the number text
+        • add text style to text box
+        -->
         <TextView
-            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="117dp"
-            android:layout_marginTop="570dp"
-            android:layout_marginEnd="117dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Number will disappear in:"
-            android:textColor="@color/default_red"
-            android:textSize="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/help_for_Number_Game2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="590dp"
-            android:background="@drawable/ic_help"
-            android:text='Help'
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/Type_the_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="113dp"
-            android:layout_marginTop="192dp"
-            android:layout_marginEnd="113dp"
-            android:fontFamily="@font/roboto_thin"
-            android:text="Type in the number"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="230dp"
-            android:layout_marginEnd="100dp"
             android:background="@drawable/keypad_edit_text_background"
-            android:fontFamily="@font/roboto_bold"
-            android:text="1371318778"
-            android:textAlignment="center"
-            android:textColor="@color/default_red"
-            android:textSize="45dp"
+            app:layout_constraintBottom_toTopOf="@+id/keypad"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/Keypad1"
+        <LinearLayout
+            android:id="@+id/keypad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="300dp"
-            android:background="@drawable/keypad_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="1"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/timeRemainingText"
+            app:layout_constraintEnd_toEndOf="parent"
 
-        <Button
-            android:id="@+id/keypad2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="300dp"
-            android:background="@drawable/keypad_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="2"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/keypad3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="300dp"
-            android:background="@drawable/keypad_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="3"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:id="@+id/row1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/keypad4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="365dp"
-            android:background="@drawable/keypad_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="4"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/keypad1"
+                    style="@style/keypadButton"
+                    android:text="1"
+                    tools:layout_editor_absoluteX="55dp"
+                    tools:layout_editor_absoluteY="148dp" />
 
-        <Button
-            android:id="@+id/keypad5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="365dp"
-            android:background="@drawable/keypad_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="5"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/keypad2"
+                    style="@style/keypadButton"
+                    android:text="2"
+                    tools:layout_editor_absoluteX="121dp"
+                    tools:layout_editor_absoluteY="119dp" />
 
-        <Button
-            android:id="@+id/keypad6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="365dp"
-            android:background="@drawable/keypad_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="6"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/keypad3"
+                    style="@style/keypadButton"
+                    android:text="3"
+                    tools:layout_editor_absoluteX="279dp"
+                    tools:layout_editor_absoluteY="148dp" />
 
-        <Button
-            android:id="@+id/keypad7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="430dp"
-            android:background="@drawable/keypad_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="7"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
 
-        <Button
-            android:id="@+id/keypad8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="430dp"
-            android:background="@drawable/keypad_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="8"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:id="@+id/row2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/keypad9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="430dp"
-            android:background="@drawable/keypad_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="9"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/keypad4"
+                    style="@style/keypadButton"
+                    android:text="4"
+                    tools:layout_editor_absoluteX="165dp"
+                    tools:layout_editor_absoluteY="218dp" />
+
+                <Button
+                    android:id="@+id/keypad5"
+                    style="@style/keypadButton"
+                    android:text="5"
+                    tools:layout_editor_absoluteX="85dp"
+                    tools:layout_editor_absoluteY="296dp" />
+
+                <Button
+                    android:id="@+id/keypad6"
+                    style="@style/keypadButton"
+                    android:text="6"
+                    tools:layout_editor_absoluteX="214dp"
+                    tools:layout_editor_absoluteY="433dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/keypad7"
+                    style="@style/keypadButton"
+                    android:text="7"
+                    tools:layout_editor_absoluteX="64dp"
+                    tools:layout_editor_absoluteY="421dp" />
+
+                <Button
+                    android:id="@+id/keypad8"
+                    style="@style/keypadButton"
+                    android:text="8"
+                    tools:layout_editor_absoluteX="259dp"
+                    tools:layout_editor_absoluteY="296dp" />
+
+                <Button
+                    android:id="@+id/keypad9"
+                    style="@style/keypadButton"
+                    android:text="9"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="49dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/keypad0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="495dp"
-            android:background="@drawable/keypad_button"
-            android:fontFamily="@font/roboto_regular"
+            style="@style/keypadButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             android:text="0"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/keypad"
+            app:layout_constraintStart_toStartOf="@+id/keypad"
+            app:layout_constraintTop_toBottomOf="@+id/keypad" />
 
         <Button
-            android:id="@+id/keypad_remove"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="495dp"
+            android:id="@+id/deleteButton"
+            android:layout_width="31.2dp"
+            android:layout_height="23.4dp"
             android:background="@drawable/delete_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="0"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/keypad0"
+            app:layout_constraintEnd_toEndOf="@+id/keypad"
+            app:layout_constraintStart_toEndOf="@+id/keypad0"
+            app:layout_constraintTop_toTopOf="@+id/keypad0" />
+
+
+        <TextView
+            android:id="@+id/timeRemainingText"
+            style="@style/textAboveTimer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <Button
+            android:id="@+id/helpIcon"
+            style="@style/helpIconStyle"
+            android:text="\?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.99" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
