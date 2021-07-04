@@ -9,4 +9,5 @@
     <string name="number_disappear">Number will disappear in:</string>
     <string name="number_appear">The number will appear here</string>
     <string name="start">Start</string>
+    <string name="time_remaining">Time Remaining:</string>
 </resources>
