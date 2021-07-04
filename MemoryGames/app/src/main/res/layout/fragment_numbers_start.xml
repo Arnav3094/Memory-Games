@@ -11,59 +11,51 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/Image_of_number_display"
+            android:id="@+id/numberDisplayBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginEnd="32dp"
             android:src="@drawable/number_display"
+
+            app:layout_constraintBottom_toTopOf="@+id/startButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/Number_Display"
+            android:id="@+id/numberAppearText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="192dp"
-            android:layout_marginEnd="99dp"
-            android:text="Number will be displayed here"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/Image_of_number_display"
-            app:layout_constraintEnd_toStartOf="@+id/Image_of_number_display"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@string/number_appear"
+            android:fontFamily="@font/roboto_thin"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/numberDisplayBox"
+            app:layout_constraintEnd_toEndOf="@+id/numberDisplayBox"
+            app:layout_constraintStart_toStartOf="@+id/numberDisplayBox"
+            app:layout_constraintTop_toTopOf="@+id/numberDisplayBox" />
 
         <Button
-            android:id="@+id/Start_Button_for_Number_Game"
+            android:id="@+id/startButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:background="@drawable/start_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Start"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/startButtonStyle"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/numberDisplayBox" />
 
         <Button
-            android:id="@+id/Help_for_Number_Game"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="590dp"
-            android:background="@drawable/ic_help"
-            android:text='Help'
-            android:textColor="#FFFFFF"
+            android:id="@+id/helpIcon"
+            android:text="\?"
+            style="@style/helpIconStyle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.99" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
