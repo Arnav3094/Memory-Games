@@ -9,46 +9,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/numberBox"
+        <TextView
+            android:id="@+id/numberAppearText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/number_box"
-
+            android:background="@drawable/number_box"
+            android:fontFamily="@font/roboto_thin"
+            android:gravity="center"
+            android:text="@string/number_appear"
+            android:textColor="@color/white"
+            android:textSize="22sp"
             app:layout_constraintBottom_toTopOf="@+id/startButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/numberAppearText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/number_appear"
-            android:fontFamily="@font/roboto_thin"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-
-            app:layout_constraintBottom_toBottomOf="@+id/numberBox"
-            app:layout_constraintEnd_toEndOf="@+id/numberBox"
-            app:layout_constraintStart_toStartOf="@+id/numberBox"
-            app:layout_constraintTop_toTopOf="@+id/numberBox" />
-
         <Button
             android:id="@+id/startButton"
+            style="@style/startButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/startButtonStyle"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberBox" />
+            app:layout_constraintTop_toBottomOf="@+id/numberAppearText" />
 
         <Button
             android:id="@+id/helpIcon"
-            android:text="\?"
             style="@style/helpIconStyle"
+            android:text="\?"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.99"
