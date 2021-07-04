@@ -27,13 +27,7 @@
 
         <TextView
             android:id="@+id/NumberDisappear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/number_disappear"
-            android:textColor="@color/default_red"
-            android:textSize="25sp"
-
+            style="@style/textAboveTimer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
