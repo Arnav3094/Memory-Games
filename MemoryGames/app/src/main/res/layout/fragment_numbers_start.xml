@@ -10,10 +10,10 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/numberDisplayBoxStart"
+            android:id="@+id/numberBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/number_display"
+            android:src="@drawable/number_box"
 
             app:layout_constraintBottom_toTopOf="@+id/startButton"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,10 +29,10 @@
             android:textColor="@color/white"
             android:textSize="22sp"
 
-            app:layout_constraintBottom_toBottomOf="@+id/numberDisplayBoxStart"
-            app:layout_constraintEnd_toEndOf="@+id/numberDisplayBoxStart"
-            app:layout_constraintStart_toStartOf="@+id/numberDisplayBoxStart"
-            app:layout_constraintTop_toTopOf="@+id/numberDisplayBoxStart" />
+            app:layout_constraintBottom_toBottomOf="@+id/numberBox"
+            app:layout_constraintEnd_toEndOf="@+id/numberBox"
+            app:layout_constraintStart_toStartOf="@+id/numberBox"
+            app:layout_constraintTop_toTopOf="@+id/numberBox" />
 
         <Button
             android:id="@+id/startButton"
@@ -43,7 +43,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberDisplayBoxStart" />
+            app:layout_constraintTop_toBottomOf="@+id/numberBox" />
 
         <Button
             android:id="@+id/helpIcon"
