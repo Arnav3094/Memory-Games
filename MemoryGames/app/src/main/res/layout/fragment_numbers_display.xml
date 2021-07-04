@@ -13,26 +13,17 @@
             android:id="@+id/Number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/number_box"
             android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
             android:textColor="@color/default_red"
             android:textSize="45sp"
-            tools:text="1371318778"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
-            />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/number_display"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3" />
+            app:layout_constraintVertical_bias="0.3"
+            tools:text="1371318778" />
 
         <TextView
             android:id="@+id/NumberDisappear"
@@ -49,10 +40,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.7" />
 
+
         <Button
             android:id="@+id/helpIcon"
-            android:text="\?"
             style="@style/helpIconStyle"
+            android:text="\?"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.99"
