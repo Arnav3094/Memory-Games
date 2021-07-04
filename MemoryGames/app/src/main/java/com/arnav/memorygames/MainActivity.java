@@ -43,10 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
                     case (R.id.words_bottom):
                         break;
-
-                    case (R.id.numbers_bottom):
-                        break;
 */
+                    case (R.id.numbers_bottom):
+                        selectedFragment = new NumbersFragment();
+                        break;
+
                 }
                 assert selectedFragment != null;
                 getSupportFragmentManager()
