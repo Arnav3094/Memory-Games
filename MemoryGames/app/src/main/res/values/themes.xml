@@ -31,4 +31,14 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">19sp</item>
     </style>
+
+    <style name="textAboveTimer">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:text">@string/number_disappear</item>
+        <item name="android:textColor">@color/default_red</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
 </resources>
