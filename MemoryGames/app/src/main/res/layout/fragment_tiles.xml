@@ -19,7 +19,7 @@
             app:layout_constraintGuide_percent="0.1" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/tilesBackground"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/tiles_background"
@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/tilesBackground" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
@@ -51,6 +51,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.9" />
+
+
+        <GridView
+            android:id="@+id/tilesGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numColumns="auto_fit"
+            app:layout_constraintEnd_toEndOf="@id/tilesBackground"
+            app:layout_constraintStart_toStartOf="@id/tilesBackground"
+            app:layout_constraintTop_toTopOf="@id/tilesBackground"
+            app:layout_constraintBottom_toBottomOf="@id/tilesBackground"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
