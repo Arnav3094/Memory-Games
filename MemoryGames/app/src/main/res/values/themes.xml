@@ -59,4 +59,13 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="keypadTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/default_red</item>
+    </style>
+
 </resources>
