@@ -147,11 +147,33 @@
         <TextView
             android:id="@+id/timeRemainingText"
             style="@style/textAboveTimer"
+            android:text="@string/time_remaining"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.8" />
+
+        <include
+            android:id="@+id/numbersDisplayTimer"
+            layout="@layout/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
+
+        <TextView
+            android:id="@+id/timerText"
+            style="@style/timerText"
+            tools:textColor="@color/black"
+            tools:text="lol"
+            app:layout_constraintBottom_toBottomOf="@+id/numbersDisplayTimer"
+            app:layout_constraintEnd_toEndOf="@+id/numbersDisplayTimer"
+            app:layout_constraintStart_toStartOf="@+id/numbersDisplayTimer"
+            app:layout_constraintTop_toTopOf="@+id/numbersDisplayTimer" />
 
         <Button
             android:id="@+id/helpIcon"
