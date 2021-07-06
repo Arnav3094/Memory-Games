@@ -9,12 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--
-        TODO:
-        • add the type in the number text
-        • add text style to text box
-        -->
-
         <TextView
             style="@style/typeTheNumber"
             android:layout_marginBottom="2dp"
