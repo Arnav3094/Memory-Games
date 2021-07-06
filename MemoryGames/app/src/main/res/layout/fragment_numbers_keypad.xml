@@ -14,10 +14,19 @@
         • add the type in the number text
         • add text style to text box
         -->
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/keypad_edit_text_background"
+            style="@style/typeTheNumber"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            tools:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/textView"
+            tools:text="12312487243"
+            style="@style/keypadTextView"
             app:layout_constraintBottom_toTopOf="@+id/keypad"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -155,7 +164,7 @@
             app:layout_constraintVertical_bias="0.8" />
 
         <include
-            android:id="@+id/numbersDisplayTimer"
+            android:id="@+id/numbersKeypadTimer"
             layout="@layout/timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -170,10 +179,10 @@
             style="@style/timerText"
             tools:textColor="@color/black"
             tools:text="lol"
-            app:layout_constraintBottom_toBottomOf="@+id/numbersDisplayTimer"
-            app:layout_constraintEnd_toEndOf="@+id/numbersDisplayTimer"
-            app:layout_constraintStart_toStartOf="@+id/numbersDisplayTimer"
-            app:layout_constraintTop_toTopOf="@+id/numbersDisplayTimer" />
+            app:layout_constraintBottom_toBottomOf="@+id/numbersKeypadTimer"
+            app:layout_constraintEnd_toEndOf="@+id/numbersKeypadTimer"
+            app:layout_constraintStart_toStartOf="@+id/numbersKeypadTimer"
+            app:layout_constraintTop_toTopOf="@+id/numbersKeypadTimer" />
 
         <Button
             android:id="@+id/helpIcon"
