@@ -28,12 +28,30 @@
         <TextView
             android:id="@+id/NumberDisappear"
             style="@style/textAboveTimer"
+            app:layout_constraintBottom_toTopOf="@+id/numbersDisplayTimer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/numbersDisplayTimer"
+            layout="@layout/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.7" />
+            app:layout_constraintVertical_bias="1" />
 
+        <TextView
+            android:id="@+id/timerText"
+            style="@style/timerText"
+            tools:textColor="@color/black"
+            tools:text="lol"
+            app:layout_constraintBottom_toBottomOf="@+id/numbersDisplayTimer"
+            app:layout_constraintEnd_toEndOf="@+id/numbersDisplayTimer"
+            app:layout_constraintStart_toStartOf="@+id/numbersDisplayTimer"
+            app:layout_constraintTop_toBottomOf="@+id/NumberDisappear" />
 
         <Button
             android:id="@+id/helpIcon"
@@ -47,4 +65,5 @@
             app:layout_constraintVertical_bias="0.99" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
