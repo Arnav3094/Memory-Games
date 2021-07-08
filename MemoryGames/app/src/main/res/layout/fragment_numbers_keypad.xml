@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/typeTheNumber"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            tools:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/textView"
+            tools:text="12312487243"
+            style="@style/keypadTextView"
+            app:layout_constraintBottom_toTopOf="@+id/keypad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/keypad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/timeRemainingText"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/row1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/keypad1"
+                    style="@style/keypadButton"
+                    android:text="1"
+                    tools:layout_editor_absoluteX="55dp"
+                    tools:layout_editor_absoluteY="148dp" />
+
+                <Button
+                    android:id="@+id/keypad2"
+                    style="@style/keypadButton"
+                    android:text="2"
+                    tools:layout_editor_absoluteX="121dp"
+                    tools:layout_editor_absoluteY="119dp" />
+
+                <Button
+                    android:id="@+id/keypad3"
+                    style="@style/keypadButton"
+                    android:text="3"
+                    tools:layout_editor_absoluteX="279dp"
+                    tools:layout_editor_absoluteY="148dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/keypad4"
+                    style="@style/keypadButton"
+                    android:text="4"
+                    tools:layout_editor_absoluteX="165dp"
+                    tools:layout_editor_absoluteY="218dp" />
+
+                <Button
+                    android:id="@+id/keypad5"
+                    style="@style/keypadButton"
+                    android:text="5"
+                    tools:layout_editor_absoluteX="85dp"
+                    tools:layout_editor_absoluteY="296dp" />
+
+                <Button
+                    android:id="@+id/keypad6"
+                    style="@style/keypadButton"
+                    android:text="6"
+                    tools:layout_editor_absoluteX="214dp"
+                    tools:layout_editor_absoluteY="433dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/keypad7"
+                    style="@style/keypadButton"
+                    android:text="7"
+                    tools:layout_editor_absoluteX="64dp"
+                    tools:layout_editor_absoluteY="421dp" />
+
+                <Button
+                    android:id="@+id/keypad8"
+                    style="@style/keypadButton"
+                    android:text="8"
+                    tools:layout_editor_absoluteX="259dp"
+                    tools:layout_editor_absoluteY="296dp" />
+
+                <Button
+                    android:id="@+id/keypad9"
+                    style="@style/keypadButton"
+                    android:text="9"
+                    tools:layout_editor_absoluteX="222dp"
+                    tools:layout_editor_absoluteY="49dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/keypad0"
+            style="@style/keypadButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            app:layout_constraintEnd_toEndOf="@+id/keypad"
+            app:layout_constraintStart_toStartOf="@+id/keypad"
+            app:layout_constraintTop_toBottomOf="@+id/keypad" />
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="31.2dp"
+            android:layout_height="23.4dp"
+            android:background="@drawable/delete_button"
+            app:layout_constraintBottom_toBottomOf="@+id/keypad0"
+            app:layout_constraintEnd_toEndOf="@+id/keypad"
+            app:layout_constraintStart_toEndOf="@+id/keypad0"
+            app:layout_constraintTop_toTopOf="@+id/keypad0" />
+
+
+        <TextView
+            android:id="@+id/timeRemainingText"
+            style="@style/textAboveTimer"
+            android:text="@string/time_remaining"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <include
+            android:id="@+id/numbersKeypadTimer"
+            layout="@layout/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
+
+        <TextView
+            android:id="@+id/timerText"
+            style="@style/timerText"
+            tools:textColor="@color/black"
+            tools:text="lol"
+            app:layout_constraintBottom_toBottomOf="@+id/numbersKeypadTimer"
+            app:layout_constraintEnd_toEndOf="@+id/numbersKeypadTimer"
+            app:layout_constraintStart_toStartOf="@+id/numbersKeypadTimer"
+            app:layout_constraintTop_toTopOf="@+id/numbersKeypadTimer" />
+
+        <Button
+            android:id="@+id/helpIcon"
+            style="@style/helpIconStyle"
+            android:text="\?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.99" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
