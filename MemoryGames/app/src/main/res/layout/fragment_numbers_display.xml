@@ -10,30 +10,49 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/numberAppearText"
+            android:id="@+id/Number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/number_box"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:text="@string/number_appear"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toTopOf="@+id/startButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/startButton"
-            style="@style/startButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
+            android:textColor="@color/default_red"
+            android:textSize="45sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberAppearText" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3"
+            tools:text="1371318778" />
+
+        <TextView
+            android:id="@+id/NumberDisappear"
+            style="@style/textAboveTimer"
+            android:text="@string/number_disappear"
+            app:layout_constraintBottom_toTopOf="@+id/numbersDisplayTimer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/numbersDisplayTimer"
+            layout="@layout/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
+
+        <TextView
+            android:id="@+id/timerText"
+            style="@style/timerText"
+            tools:textColor="@color/black"
+            tools:text="lol"
+            app:layout_constraintBottom_toBottomOf="@+id/numbersDisplayTimer"
+            app:layout_constraintEnd_toEndOf="@+id/numbersDisplayTimer"
+            app:layout_constraintStart_toStartOf="@+id/numbersDisplayTimer"
+            app:layout_constraintTop_toTopOf="@+id/numbersDisplayTimer" />
 
         <Button
             android:id="@+id/helpIcon"
