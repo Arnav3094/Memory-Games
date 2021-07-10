@@ -11,4 +11,5 @@
     <string name="start">Start</string>
     <string name="time_remaining">Time Remaining:</string>
     <string name="type_the_number">Type in the Number:</string>
+    <string name="words_will_appear_here">Words will appear here</string>
 </resources>
