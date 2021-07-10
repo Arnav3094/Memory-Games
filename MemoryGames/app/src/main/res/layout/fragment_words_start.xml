@@ -18,7 +18,7 @@
             android:background="@drawable/words_display"
             android:fontFamily="@font/roboto_thin"
             android:text="@string/words_will_appear_here"
-            android:textColor="@color/darker_button_color"
+            android:textColor="@color/default_button_color"
             android:textSize="25sp"
             android:gravity="center"
 
