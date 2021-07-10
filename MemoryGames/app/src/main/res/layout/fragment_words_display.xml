@@ -111,8 +111,6 @@
         <TextView
             android:id="@+id/wordsDisappear"
             style="@style/textAboveTimer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/words_will_disappear_in"
             app:layout_constraintBottom_toTopOf="@+id/wordsDisplayTimer"
             app:layout_constraintEnd_toEndOf="parent"
