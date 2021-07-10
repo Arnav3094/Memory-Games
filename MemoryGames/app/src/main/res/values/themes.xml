@@ -24,8 +24,6 @@
         <item name="textAllCaps">false</item>
     </style>
 
-
-
     <style name="startButtonStyle">
         <item name="android:background">@drawable/start_button</item>
         <item name="android:fontFamily">@font/roboto_regular</item>
