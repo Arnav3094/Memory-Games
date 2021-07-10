@@ -107,7 +107,7 @@
             </LinearLayout>
 
         </LinearLayout>
-        
+
         <TextView
             android:id="@+id/wordsDisappear"
             style="@style/textAboveTimer"
