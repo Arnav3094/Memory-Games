@@ -9,176 +9,147 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/Words_background"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/words_display"
-            app:layout_constraintBottom_toTopOf="@+id/Words_disappear_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <TextView
-            android:id="@+id/Words_disappear_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Words will disappear in:"
-            android:textColor="@color/default_red"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.7" />
-
-        <Button
-            android:id="@+id/help_button2"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/ic_help"
-            android:text="\?"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.99"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Words_disappear_text"
-            app:layout_constraintVertical_bias="0.9" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/words_display"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/Words_background"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/wordsDisappear"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/Words_background">
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
+                android:id="@+id/row1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/word1"
                     style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:fontFamily="@font/roboto_bold"
-                    tools:text="Table"
-                    android:textColor="@color/darker_button_color"
-                    android:textSize="30sp" />
+                    tools:text="Table" />
 
                 <TextView
                     android:id="@+id/word2"
                     style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-
-                    android:fontFamily="@font/roboto_bold"
-                    tools:text="Diary"
-                    android:textColor="@color/darker_button_color"
-                    android:textSize="30sp" />
+                    tools:text="Diary" />
 
                 <TextView
                     android:id="@+id/word3"
                     style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:layout_weight="1"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Tissue"
-                    android:textColor="@color/darker_button_color"
-                    android:textSize="30sp" />
+                    tools:text="Tissue"/>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:id="@+id/row2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/word4"
                     style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:layout_weight="1"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Watch"
-                    android:textColor="@color/darker_button_color"
-                    android:textSize="30sp" />
+                    tools:text="Watch"/>
 
                 <TextView
                     android:id="@+id/word5"
                     style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:layout_weight="1"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Camera"
-                    android:textColor="@color/darker_button_color"
-                    android:textSize="30sp" />
+                    tools:text="Camera" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:id="@+id/row3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/word6"
                     style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:layout_weight="1"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Bottle"
-                    android:textColor="@color/darker_button_color"
-                    android:textSize="30sp" />
+                    tools:text="Bottle"/>
 
                 <TextView
                     android:id="@+id/word7"
                     style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:layout_weight="1"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Brush"
-                    android:textColor="@color/darker_button_color"
-                    android:textSize="30sp" />
+                    tools:text="Brush"/>
 
                 <TextView
                     android:id="@+id/word8"
                     style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:layout_weight="1"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Ball"
-                    android:textColor="@color/darker_button_color"
-                    android:textSize="30sp" />
+                    tools:text="Shampoo"/>
 
             </LinearLayout>
 
         </LinearLayout>
+        
+        <TextView
+            android:id="@+id/wordsDisappear"
+            style="@style/textAboveTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/words_will_disappear_in"
+            app:layout_constraintBottom_toTopOf="@+id/wordsDisplayTimer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/wordsDisplayTimer"
+            layout="@layout/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
+
+<!--Note that tools:textColour - black has been used, but the actual colour will be white-->
+        <TextView
+            android:id="@+id/timerText"
+            style="@style/timerText"
+            tools:textColor="@color/black"
+            tools:text="10s"
+            app:layout_constraintBottom_toBottomOf="@+id/wordsDisplayTimer"
+            app:layout_constraintEnd_toEndOf="@+id/wordsDisplayTimer"
+            app:layout_constraintStart_toStartOf="@+id/wordsDisplayTimer"
+            app:layout_constraintTop_toTopOf="@+id/wordsDisplayTimer" />
+
+        <Button
+            android:id="@+id/helpIcon"
+            style="@style/helpIconStyle"
+            android:text="\?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.99" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
