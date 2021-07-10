@@ -14,7 +14,10 @@
     </style>
 
     <style name="wordElement">
-        <item name="android:padding">5dp</item>
+        <item name="android:padding">10dp</item>
+        <item name= "android:fontFamily">@font/roboto_bold</item>
+        <item name= "android:textColor">@color/darker_button_color</item>
+        <item name= "android:textSize">28sp</item>
     </style>
     
     <style name="wordButton">
