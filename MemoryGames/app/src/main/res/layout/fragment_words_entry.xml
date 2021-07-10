@@ -67,14 +67,14 @@
 
                 <Button
                     android:id="@+id/button1"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Table"/>
 
                 <Button
                     android:id="@+id/button2"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Button"
@@ -82,7 +82,7 @@
 
                 <Button
                     android:id="@+id/button3"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Button"
@@ -97,7 +97,7 @@
 
                 <Button
                     android:id="@+id/button4"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -106,7 +106,7 @@
 
                 <Button
                     android:id="@+id/button5"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -115,7 +115,7 @@
 
                 <Button
                     android:id="@+id/button6"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -132,7 +132,7 @@
 
                 <Button
                     android:id="@+id/button7"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -141,7 +141,7 @@
 
                 <Button
                     android:id="@+id/button8"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -150,7 +150,7 @@
 
                 <Button
                     android:id="@+id/button9"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -165,7 +165,7 @@
 
                 <Button
                     android:id="@+id/button10"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -174,7 +174,7 @@
 
                 <Button
                     android:id="@+id/button11"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -183,7 +183,7 @@
 
                 <Button
                     android:id="@+id/button12"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -198,7 +198,7 @@
 
                 <Button
                     android:id="@+id/button13"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -207,7 +207,7 @@
 
                 <Button
                     android:id="@+id/button14"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -216,7 +216,7 @@
 
                 <Button
                     android:id="@+id/button15"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -231,7 +231,7 @@
 
                 <Button
                     android:id="@+id/button16"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -240,7 +240,7 @@
 
                 <Button
                     android:id="@+id/button17"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -249,7 +249,7 @@
 
                 <Button
                     android:id="@+id/button18"
-                    style="@style/word_button"
+                    style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

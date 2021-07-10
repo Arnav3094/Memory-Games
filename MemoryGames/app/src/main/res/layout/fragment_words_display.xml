@@ -67,7 +67,7 @@
 
                 <TextView
                     android:id="@+id/word1"
-                    style="@style/Word_Element"
+                    style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -78,7 +78,7 @@
 
                 <TextView
                     android:id="@+id/word2"
-                    style="@style/Word_Element"
+                    style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -90,7 +90,7 @@
 
                 <TextView
                     android:id="@+id/word3"
-                    style="@style/Word_Element"
+                    style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -110,7 +110,7 @@
 
                 <TextView
                     android:id="@+id/word4"
-                    style="@style/Word_Element"
+                    style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -122,7 +122,7 @@
 
                 <TextView
                     android:id="@+id/word5"
-                    style="@style/Word_Element"
+                    style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -142,7 +142,7 @@
 
                 <TextView
                     android:id="@+id/word6"
-                    style="@style/Word_Element"
+                    style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -154,7 +154,7 @@
 
                 <TextView
                     android:id="@+id/word7"
-                    style="@style/Word_Element"
+                    style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -166,7 +166,7 @@
 
                 <TextView
                     android:id="@+id/word8"
-                    style="@style/Word_Element"
+                    style="@style/wordElement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
