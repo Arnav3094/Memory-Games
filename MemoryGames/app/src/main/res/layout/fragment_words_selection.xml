@@ -9,34 +9,39 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--Note that tools:textColour - black has been used here but the actual colour will be white-->
         <TextView
-            android:id="@+id/Chose_Word_Text"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_thin"
             android:text="@string/choose_the_correct_words"
+            android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.1" />
+            tools:textColor="@color/black" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/words_selection_background"
+            android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/timeRemainingText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Chose_Word_Text"
-            app:layout_constraintVertical_bias="0.4">
+            app:layout_constraintTop_toTopOf="parent">
+
 
             <LinearLayout
+                android:id="@+id/row1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
@@ -51,31 +56,31 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Button"
-                    tools:text="Natebook" />
+                    tools:text="Notebook" />
 
                 <Button
                     android:id="@+id/button3"
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Button"
                     tools:text="Furniture" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/row2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button4"
                     style="@style/wordButton"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Ball"
                     tools:text="Table" />
 
                 <Button
@@ -83,25 +88,23 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Brush"
-                    tools:text="Table" />
+                    tools:text="Shampoo" />
 
                 <Button
                     android:id="@+id/button6"
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Watch"
-                    tools:text="Table" />
+                    tools:text="Computer" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/row3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
@@ -109,8 +112,6 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Camera" />
 
                 <Button
@@ -118,8 +119,6 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Diary" />
 
                 <Button
@@ -127,14 +126,15 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Clouds" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/row4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
@@ -142,8 +142,6 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Raincoat" />
 
                 <Button
@@ -151,8 +149,6 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Rubber" />
 
                 <Button
@@ -160,14 +156,15 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Pen" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/row5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
@@ -175,8 +172,6 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Glass" />
 
                 <Button
@@ -184,8 +179,6 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Mouse" />
 
                 <Button
@@ -193,14 +186,15 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Cat"
                     tools:text="Table" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/row6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
@@ -208,8 +202,6 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Cap" />
 
                 <Button
@@ -217,8 +209,6 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Chair" />
 
                 <Button
@@ -226,20 +216,18 @@
                     style="@style/wordButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button"
                     tools:text="Bottle" />
-
             </LinearLayout>
+
         </LinearLayout>
 
         <TextView
             android:id="@+id/timeRemainingText"
             style="@style/textAboveTimer"
             android:text="@string/time_remaining"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/wordsSelectionTimer"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <include
             android:id="@+id/wordsSelectionTimer"
@@ -255,12 +243,12 @@
         <TextView
             android:id="@+id/timerText"
             style="@style/timerText"
-            tools:textColor="@color/black"
-            tools:text="20s"
             app:layout_constraintBottom_toBottomOf="@+id/wordsSelectionTimer"
             app:layout_constraintEnd_toEndOf="@+id/wordsSelectionTimer"
             app:layout_constraintStart_toStartOf="@+id/wordsSelectionTimer"
-            app:layout_constraintTop_toTopOf="@+id/wordsSelectionTimer" />
+            app:layout_constraintTop_toTopOf="@+id/wordsSelectionTimer"
+            tools:text="20s"
+            tools:textColor="@color/black" />
 
         <Button
             android:id="@+id/helpIcon"
