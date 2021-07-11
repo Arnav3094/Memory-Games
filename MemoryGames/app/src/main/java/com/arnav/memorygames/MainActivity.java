@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 */
                     case (R.id.numbers_bottom):
-                        selectedFragment = new NumbersFragment();
+                        selectedFragment = new NumbersFragment_Start();
                         break;
 
                 }
