@@ -11,56 +11,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1" />
-
-        <ImageView
-            android:id="@+id/tilesBackground"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/tiles_background"
-            app:layout_constraintBottom_toTopOf="@+id/button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/startButton"
+            style="@style/startButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/start_button"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/start"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline1"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilesBackground" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.9" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
         <LinearLayout
+            android:id="@+id/grid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/tiles_background"
+            android:gravity="center"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/tilesBackground"
-            app:layout_constraintEnd_toEndOf="@+id/tilesBackground"
-            app:layout_constraintStart_toStartOf="@+id/tilesBackground"
-            app:layout_constraintTop_toTopOf="@+id/tilesBackground">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTop">
 
             <LinearLayout
                 android:id="@+id/row1"
@@ -70,11 +42,8 @@
                 app:layout_constraintStart_toStartOf="@+id/tilesBackground">
 
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
 
             </LinearLayout>
@@ -87,11 +56,8 @@
                 app:layout_constraintStart_toStartOf="@+id/tilesBackground">
 
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
 
             </LinearLayout>
@@ -104,11 +70,8 @@
                 app:layout_constraintStart_toStartOf="@+id/tilesBackground">
 
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
 
             </LinearLayout>
@@ -121,16 +84,27 @@
                 app:layout_constraintStart_toStartOf="@+id/tilesBackground">
 
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
-
                 <Button style="@style/tile" />
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
