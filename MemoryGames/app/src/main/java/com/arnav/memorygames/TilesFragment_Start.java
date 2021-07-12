@@ -18,9 +18,6 @@ import android.widget.Toast;
 
 public class TilesFragment_Start extends Fragment {
 
-
-    ImageView curView;
-    int countPair;
     final int[] tileColours = new int[] {R.color.tile_blue,R.color.tile_cyan,
             R.color.tile_green, R.color.tile_maroon, R.color.tile_orange,
             R.color.tile_purple, R.color.tile_red, R.color.tile_yellow};
