@@ -13,13 +13,13 @@
         <TextView
             style="@style/typeTheNumber"
             android:layout_marginBottom="2dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintBottom_toTopOf="@+id/keypadText"
+            app:layout_constraintEnd_toEndOf="@+id/keypadText"
+            app:layout_constraintStart_toStartOf="@+id/keypadText"
             tools:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/keypadText"
             tools:text="12312487243"
             style="@style/keypadTextView"
             app:layout_constraintBottom_toTopOf="@+id/keypad"
