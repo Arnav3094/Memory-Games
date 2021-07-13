@@ -11,18 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <Button
-            android:id="@+id/startButton"
-            style="@style/startButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
         <LinearLayout
             android:id="@+id/grid"
             android:layout_width="wrap_content"
@@ -103,13 +91,50 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.15" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineBottom"
+        <TextView
+            android:id="@+id/timeRemainingText"
+            style="@style/textAboveTimer"
+            android:text="@string/time_remaining"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <include
+            android:id="@+id/tilesKeypadTimer"
+            layout="@layout/timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.8" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
 
+        <!--Note that 'tools:text and textColor has been used so actual text colour and stuff will be fine -->
+
+        <TextView
+            android:id="@+id/timerText"
+            style="@style/timerText"
+            app:layout_constraintBottom_toBottomOf="@+id/tilesKeypadTimer"
+            app:layout_constraintEnd_toEndOf="@+id/tilesKeypadTimer"
+            app:layout_constraintStart_toStartOf="@+id/tilesKeypadTimer"
+            app:layout_constraintTop_toTopOf="@+id/tilesKeypadTimer"
+            tools:text="30s"
+            tools:textColor="@color/black" />
+
+
+        <Button
+            android:id="@+id/helpIcon"
+            style="@style/helpIconStyle"
+            android:text="\?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.99" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
