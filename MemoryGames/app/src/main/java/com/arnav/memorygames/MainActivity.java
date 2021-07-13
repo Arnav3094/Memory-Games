@@ -37,11 +37,10 @@ public class MainActivity extends AppCompatActivity {
                         selectedFragment = new TilesFragment_Start();
                         break;
 
-/*                  Add the code for the cases below =>>
-
                     case (R.id.words_bottom):
+                        selectedFragment = new WordsFragment_Start();
                         break;
-*/
+
                     case (R.id.numbers_bottom):
                         selectedFragment = new NumbersFragment();
                         break;
