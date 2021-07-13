@@ -42,7 +42,7 @@ public class TilesFragment_Start extends Fragment {
         });
     }
 
-    public void countDown(long timeLeftInMillis) {
+    private void countDown(long timeLeftInMillis) {
         timer = new CountDownTimer(timeLeftInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
