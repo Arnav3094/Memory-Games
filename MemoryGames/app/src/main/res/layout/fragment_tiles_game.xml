@@ -29,11 +29,21 @@
                 app:layout_constraintEnd_toEndOf="@+id/tilesBackground"
                 app:layout_constraintStart_toStartOf="@+id/tilesBackground">
 
-                <Button style="@style/tile" />
+                <Button
+                    android:id="@+id/tile11"
+                    style="@style/tile" />
 
-                <Button style="@style/tile" />
-                <Button style="@style/tile" />
-                <Button style="@style/tile" />
+                <Button
+                    android:id="@+id/tile12"
+                    style="@style/tile" />
+
+                <Button
+                    android:id="@+id/tile13"
+                    style="@style/tile" />
+
+                <Button
+                    android:id="@+id/tile14"
+                    style="@style/tile" />
 
             </LinearLayout>
 
@@ -44,10 +54,21 @@
                 app:layout_constraintEnd_toEndOf="@+id/tilesBackground"
                 app:layout_constraintStart_toStartOf="@+id/tilesBackground">
 
-                <Button style="@style/tile" />
-                <Button style="@style/tile" />
-                <Button style="@style/tile" />
-                <Button style="@style/tile" />
+                <Button
+                    android:id="@+id/tile21"
+                    style="@style/tile" />
+
+                <Button
+                    android:id="@+id/tile22"
+                    style="@style/tile" />
+
+                <Button
+                    android:id="@+id/tile23"
+                    style="@style/tile" />
+
+                <Button
+                    android:id="@+id/tile24"
+                    style="@style/tile" />
 
             </LinearLayout>
 
@@ -58,10 +79,21 @@
                 app:layout_constraintEnd_toEndOf="@+id/tilesBackground"
                 app:layout_constraintStart_toStartOf="@+id/tilesBackground">
 
-                <Button style="@style/tile" />
-                <Button style="@style/tile" />
-                <Button style="@style/tile" />
-                <Button style="@style/tile" />
+                <Button
+                    android:id="@+id/tile31"
+                    style="@style/tile" />
+
+                <Button
+                    android:id="@+id/tile32"
+                    style="@style/tile" />
+
+                <Button
+                    android:id="@+id/tile33"
+                    style="@style/tile" />
+
+                <Button
+                    android:id="@+id/tile34"
+                    style="@style/tile" />
 
             </LinearLayout>
 
@@ -72,13 +104,21 @@
                 app:layout_constraintEnd_toEndOf="@+id/tilesBackground"
                 app:layout_constraintStart_toStartOf="@+id/tilesBackground">
 
-                <Button style="@style/tile" />
+                <Button
+                    android:id="@+id/tile41"
+                    style="@style/tile" />
 
-                <Button style="@style/tile" />
+                <Button
+                    android:id="@+id/tile42"
+                    style="@style/tile" />
 
-                <Button style="@style/tile" />
+                <Button
+                    android:id="@+id/tile43"
+                    style="@style/tile" />
 
-                <Button style="@style/tile" />
+                <Button
+                    android:id="@+id/tile44"
+                    style="@style/tile" />
 
             </LinearLayout>
 
