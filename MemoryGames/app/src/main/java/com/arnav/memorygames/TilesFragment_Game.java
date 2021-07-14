@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class TilesFragment_Game extends Fragment {
@@ -32,6 +34,14 @@ public class TilesFragment_Game extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        Log.d(TAG, "onCreateView: Moved to " + TAG);
+        return inflater.inflate(R.layout.fragment_tiles_game, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         tile11 = requireView().findViewById(R.id.tile11);
         tile12 = requireView().findViewById(R.id.tile12);
         tile13 = requireView().findViewById(R.id.tile13);
@@ -48,9 +58,5 @@ public class TilesFragment_Game extends Fragment {
         tile42 = requireView().findViewById(R.id.tile42);
         tile43 = requireView().findViewById(R.id.tile43);
         tile44 = requireView().findViewById(R.id.tile44);
-
-
-        Log.d(TAG, "onCreateView: Moved to " + TAG);
-        return inflater.inflate(R.layout.fragment_tiles_game, container, false);
     }
 }
