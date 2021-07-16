@@ -40,7 +40,7 @@ public class NumbersFragment_Display extends Fragment {
 
         int[] random_integer = new int[0];
         Random rand = new Random();
-        random_integer = new int[]{rand.nextInt(100000 - 9999 + 1) + 9999};
+        random_integer = new int[]{rand.nextInt(1000000000 - 99999999 + 1) + 9999};
         int randomint = random_integer[0];
         Number.setText(String.valueOf(randomint));
 
@@ -53,7 +53,7 @@ public class NumbersFragment_Display extends Fragment {
 
             @Override
             public void onFinish() {
-                timerText.setText("Finished");
+                timerText.setText("Time Up");
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
                 NumbersFragment_Keypad NumbersKeypadFragment = new NumbersFragment_Keypad();
@@ -65,7 +65,6 @@ public class NumbersFragment_Display extends Fragment {
 
                 transaction.replace(R.id.frameLayout, NumbersKeypadFragment);
                 transaction.commit();
-                //Number1.sendNumber(randomint);
             }
         };
         countDownTimer.start();

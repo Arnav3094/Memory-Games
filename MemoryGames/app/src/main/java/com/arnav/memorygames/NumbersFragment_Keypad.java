@@ -43,6 +43,7 @@ public class NumbersFragment_Keypad extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        timerText = getView().findViewById(R.id.timerText);
         keypadText = getView().findViewById(R.id.keypadText);
         Button b1 = getView().findViewById(R.id.keypad1);
         Button b2 = getView().findViewById(R.id.keypad2);
@@ -129,11 +130,14 @@ public class NumbersFragment_Keypad extends Fragment {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (UserNumber != null && UserNumber.length() > 0) {
+                    UserNumber = UserNumber.substring(0, UserNumber.length() - 1);
+                }
+                keypadText.setText(UserNumber);
             }
         });
 
-        countDownTimer = new CountDownTimer(5000, 1000) {
+        countDownTimer = new CountDownTimer(15000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 remainingtime = (int) millisUntilFinished / 1000;
@@ -142,12 +146,14 @@ public class NumbersFragment_Keypad extends Fragment {
 
             @Override
             public void onFinish() {
-                timerText.setText("Finished");
+                timerText.setText("Time Up");
                 correctnum = "" + correctNumber;
                 if (UserNumber.equals(correctnum)) {
                     UserNumber = "";
+                    keypadText.setText("Correct");
                 } else if (UserNumber.equals(correctnum)) {
                     UserNumber = "";
+                    keypadText.setText("Incorrect");
                 }
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
@@ -159,11 +165,11 @@ public class NumbersFragment_Keypad extends Fragment {
         };
         countDownTimer.start();
     }
-    public void updateKeypadText(){
-        if (!correctnum.equals("")) {
-            keypadText.setText(correctnum);
-        }
+    public void updateKeypadText() {
+        keypadText.setText(UserNumber);
+        //if (!correctnum.equals("")) {
+        //  keypadText.setText(correctnum);
+        //}
     }
-
 }
 
