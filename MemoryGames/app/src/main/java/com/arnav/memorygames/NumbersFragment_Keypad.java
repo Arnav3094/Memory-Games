@@ -157,8 +157,8 @@ public class NumbersFragment_Keypad extends Fragment {
                 }
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
-                NumbersFragment_Display NumbersDisplayFragment = new NumbersFragment_Display();
-                transaction.replace(R.id.frameLayout, NumbersDisplayFragment);
+                NumbersFragment_Start NumberFragment_Start = new NumbersFragment_Start();
+                transaction.replace(R.id.frameLayout, NumberFragment_Start);
                 transaction.commit();
             }
 
