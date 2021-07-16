@@ -11,6 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
 public class TilesFragment_Game extends Fragment {
 
     private static final String TAG = "TilesFragment_Game";
@@ -29,6 +33,9 @@ public class TilesFragment_Game extends Fragment {
 
     Button tile11, tile12, tile13, tile14, tile21, tile22, tile23, tile24,
             tile31, tile32, tile33, tile34, tile41, tile42, tile43, tile44;
+
+    ArrayList<Button> tiles;
+    ArrayList<Button> tilesOpened;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,5 +65,68 @@ public class TilesFragment_Game extends Fragment {
         tile42 = requireView().findViewById(R.id.tile42);
         tile43 = requireView().findViewById(R.id.tile43);
         tile44 = requireView().findViewById(R.id.tile44);
+        tiles = new ArrayList<>();
+        tilesOpened = new ArrayList<>();
+        Button[] tilesArray = new Button[]{tile11, tile12, tile13, tile14, tile21, tile22, tile23, tile24, tile31, tile32, tile33, tile34, tile41, tile42, tile43, tile44};
+        tiles.addAll(Arrays.asList(tilesArray));
+        Collections.shuffle(tiles);
+
+        View.OnClickListener tileClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: Flipping Tile");
+                flipTile((Button) v);
+                Log.d(TAG, "onClick: Tile Flipped");
+            }
+        };
+
+        for (Button button : tiles) {
+            button.setOnClickListener(tileClickListener);
+        }
+
     }
+
+//    private void makeArrayList(Button[] array, ArrayList<Button> arrayList) {
+//        for (Button button : array) {
+//            arrayList.add(button);
+//        }
+//    }
+
+
+    void flipTile(Button tile) {
+        int index = (int) tiles.indexOf(tile);
+        if (index >= 8) {
+            index = index - 8;
+        }
+        Log.d(TAG, "flipTile: " + index);
+
+        if (tilesOpened.size() < 2) {
+            tile.setBackgroundResource(tileDrawables[index]);
+            tilesOpened.add(tile);
+        }
+
+        if (tilesOpened.size() == 2) {
+            if (match(tilesOpened)) {
+                for (Button button : tilesOpened) {
+                    button.setVisibility(View.INVISIBLE);
+                    button.setEnabled(false);
+                }
+            } else {
+                for (Button button : tilesOpened) {
+                    button.setBackgroundResource(R.drawable.hidden_tile);
+                }
+            }
+            tilesOpened.clear();
+        }
+    }
+
+    boolean match(ArrayList<Button> arr) {
+        boolean bool = false;
+        if ((arr.get(0).getBackground()) == (arr.get(1).getBackground())) {
+            bool = true;
+            Log.d(TAG, "match: tile Matched!");
+        }
+        return bool;
+    }
+
 }
