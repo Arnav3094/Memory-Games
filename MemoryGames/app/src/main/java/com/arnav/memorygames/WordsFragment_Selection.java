@@ -13,7 +13,7 @@ public class WordsFragment_Selection extends Fragment {
                              Bundle savedInstanceState) {
         //Bundle bundle = this.getArguments();
         //words = bundle.getInt("CorrectWords") ;
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_words_selection, container, false);
     }
 

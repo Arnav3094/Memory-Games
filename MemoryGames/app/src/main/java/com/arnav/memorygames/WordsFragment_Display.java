@@ -22,11 +22,29 @@ public class WordsFragment_Display extends Fragment {
     public int remainingtime;
     //List<String> list =new ArrayList<String>();
     //list = ["consider", "minute", "accord", "evident", "practice", "intend"];
+    TextView word1;
+    TextView word2;
+    TextView word3;
+    TextView word4;
+    TextView word5;
+    TextView word6;
+    TextView word7;
+    TextView word8;
     String[] TotalWords;
+    String[] wordPlaces;
     String[] words;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        word1 = getView().findViewById(R.id.word1);
+        word2 = getView().findViewById(R.id.word2);
+        word3 = getView().findViewById(R.id.word3);
+        word4 = getView().findViewById(R.id.word4);
+        word5 = getView().findViewById(R.id.word5);
+        word6 = getView().findViewById(R.id.word6);
+        word7 = getView().findViewById(R.id.word7);
+        word8 = getView().findViewById(R.id.word8);
 
         TotalWords = new String[]{
                 "consider", "minute", "accord", "evident", "practice", "intend", "conduct", "engage", "obtain", "scarce", "policy", "straight",
@@ -36,11 +54,24 @@ public class WordsFragment_Display extends Fragment {
                 "wander", "insist", "knight", "convince", "inspire", "convention", "skill", "harry", "financial", "reflect", "novel", "furnish",
                 "compel", "venture", "territory", "temper", "bent", "intimate", "undertake", "majority", "crew", "chamber", "humble", "scheme",
                 "keen", "liberal", "despair", "tide", "attitude", "justify", "flag", "merit", "manifest", "notion", "scale", "formal",
-                "resource", "persist", "contempt"
-        };
+                "resource", "persist", "contempt","bat","ball","cricket","watch"
+        }; //90
         timerText = getView().findViewById(R.id.timerText);
 
-
+        for (int i = 0; i < 8; i ++ ){
+            wordPlaces[i] = String.valueOf((Math.random() * 91));
+            words[i] = TotalWords[Integer.parseInt(wordPlaces[i])];
+        }
+        for (int j = 1; j < 9; j++){
+            word1.setText(words[0]);
+            word2.setText(words[1]);
+            word3.setText(words[2]);
+            word4.setText(words[3]);
+            word5.setText(words[4]);
+            word6.setText(words[5]);
+            word7.setText(words[6]);
+            word8.setText(words[7]);
+        }
         countDownTimer = new CountDownTimer(5000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -57,7 +88,7 @@ public class WordsFragment_Display extends Fragment {
 
                 //Log.d(TAG, "onFinish: Sending Number");
                 //Bundle bundle = new Bundle();
-                //bundle.putCharSequenceArrayList("CorrectWords", words);
+                //bundle.putCharSequenceArray("CorrectWords", words);
                 //WordsFragment_Selection.setArguments(bundle);
 
                 transaction.replace(R.id.frameLayout, WordsFragmentSelect);
