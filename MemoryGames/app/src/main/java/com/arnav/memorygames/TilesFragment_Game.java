@@ -132,15 +132,6 @@ public class TilesFragment_Game extends Fragment {
                 }
             }, 500);
         }
-        /*
-        if (tilesOpened.size() < 2) {
-            tile.setBackgroundResource(tileDrawables[index]);
-            tilesOpened.add(tile);
-        }
-        if (tilesOpened.size() == 2) {
-            if (match(tilesOpened)) {for (Button button : tilesOpened) {button.setVisibility(View.INVISIBLE); button.setEnabled(false);}
-            } else {for (Button button : tilesOpened) {button.setBackgroundResource(R.drawable.hidden_tile);}}tilesOpened.clear();}
-            */
     }
 
     boolean match(ArrayList<Button> arr) {
