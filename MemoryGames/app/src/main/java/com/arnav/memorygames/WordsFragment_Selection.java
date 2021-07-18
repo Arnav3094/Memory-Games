@@ -31,9 +31,9 @@ public class WordsFragment_Selection extends Fragment {
     Button button17;
     Button button18;
     String[] TotalWords;
-    Button[] incorrectButtonArray;
     Button[] buttonArray;
     Button[] correctButtonArray;
+    String[] UserWords;
     String[] words;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -97,12 +97,120 @@ public class WordsFragment_Selection extends Fragment {
         for (int i = 0; i < 9; i ++ ){
             correctButtonArray[i] = buttonArray[Integer.parseInt(String.valueOf(Math.random() * 19))];
         }
+
+        for (int x = 0; x < 19; x++){
+            buttonArray[x].setText(TotalWords[Integer.parseInt(String.valueOf(Math.random() * 19))]);
+        }
+
         for (int j = 0; j < 9; j++){
             correctButtonArray[j].setText(words[j]);
         }
-        
+/*
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        //incorrectButtonArray = buttonArray - correctButtonArray;
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        button13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });button14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });button15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });button16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });button17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });button18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+*/
+
         Bundle bundle = this.getArguments();
         words = bundle.getStringArray("CorrectWords");
 
