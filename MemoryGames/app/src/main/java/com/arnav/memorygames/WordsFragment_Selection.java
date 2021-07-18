@@ -31,7 +31,7 @@ public class WordsFragment_Selection extends Fragment {
     Button button17;
     Button button18;
     String[] TotalWords;
-    String[] CorrectButton;
+    Button[] incorrectButtonArray;
     Button[] buttonArray;
     Button[] correctButtonArray;
     String[] words;
@@ -100,7 +100,9 @@ public class WordsFragment_Selection extends Fragment {
         for (int j = 0; j < 9; j++){
             correctButtonArray[j].setText(words[j]);
         }
+        
 
+        //incorrectButtonArray = buttonArray - correctButtonArray;
         Bundle bundle = this.getArguments();
         words = bundle.getStringArray("CorrectWords");
 
