@@ -2,6 +2,8 @@ package com.arnav.memorygames;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -17,6 +19,11 @@ public class WordsFragment_Start extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_words_start, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         Button startButton = getView().findViewById(R.id.startButton);
 
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +36,6 @@ public class WordsFragment_Start extends Fragment {
                 transaction.commit();
             }
         });
-
-        return inflater.inflate(R.layout.fragment_words_start, container, false);
+        super.onViewCreated(view, savedInstanceState);
     }
 }

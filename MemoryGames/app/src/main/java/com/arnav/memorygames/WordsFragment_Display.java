@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -36,7 +38,12 @@ public class WordsFragment_Display extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_words_display, container, false);
+    }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         word1 = getView().findViewById(R.id.word1);
         word2 = getView().findViewById(R.id.word2);
         word3 = getView().findViewById(R.id.word3);
@@ -86,10 +93,10 @@ public class WordsFragment_Display extends Fragment {
                 FragmentTransaction transaction = manager.beginTransaction();
                 WordsFragment_Selection WordsFragmentSelect = new WordsFragment_Selection();
 
-                //Log.d(TAG, "onFinish: Sending Number");
-                //Bundle bundle = new Bundle();
-                //bundle.putCharSequenceArray("CorrectWords", words);
-                //WordsFragment_Selection.setArguments(bundle);
+                Log.d(TAG, "onFinish: Sending Number");
+                Bundle bundle = new Bundle();
+                bundle.putCharSequenceArray("CorrectWords", words);
+                WordsFragmentSelect.setArguments(bundle);
 
                 transaction.replace(R.id.frameLayout, WordsFragmentSelect);
                 transaction.commit();
@@ -97,7 +104,6 @@ public class WordsFragment_Display extends Fragment {
         };
         countDownTimer.start();
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_words_display, container, false);
+        super.onViewCreated(view, savedInstanceState);
     }
 }
