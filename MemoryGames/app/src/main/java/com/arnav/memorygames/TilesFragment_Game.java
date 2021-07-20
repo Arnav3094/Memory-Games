@@ -92,12 +92,15 @@ public class TilesFragment_Game extends Fragment {
             => when clicking too fast, throws an index out of bounds exception
             => why is handler doing the stuff twice??
        Feature Implementations
+            => Timer
+       General Feature Implementations
+            => stop bottomNav for ongoing Game
             => onClick for start page layout which give toast saying click on start button ...
             => (maybe) animated start button page
     */
 
     void flipTile(Button tile) {
-        int index = (int) tiles.indexOf(tile);
+        int index = tiles.indexOf(tile);
         if (index >= 8) {
             index = index - 8;
         }
