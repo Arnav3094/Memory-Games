@@ -87,9 +87,13 @@ public class TilesFragment_Game extends Fragment {
         }
     }
 
-/*    TODO : Error Resolution
-        => when clicking too fast, throws an index out of bounds exception
-        => why is handler doing the stuff twice??
+/*    TODO :
+       Error Resolution
+            => when clicking too fast, throws an index out of bounds exception
+            => why is handler doing the stuff twice??
+       Feature Implementations
+            => onClick for start page layout which give toast saying click on start button ...
+            => (maybe) animated start button page
     */
 
     void flipTile(Button tile) {
