@@ -152,18 +152,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1" />
 
-        <!--Note that 'tools:text and textColor has been used so actual text colour and stuff will be fine -->
-
-        <TextView
-            android:id="@+id/timerText"
-            style="@style/timerText"
-            app:layout_constraintBottom_toBottomOf="@+id/tilesKeypadTimer"
-            app:layout_constraintEnd_toEndOf="@+id/tilesKeypadTimer"
-            app:layout_constraintStart_toStartOf="@+id/tilesKeypadTimer"
-            app:layout_constraintTop_toTopOf="@+id/tilesKeypadTimer"
-            tools:text="30s"
-            tools:textColor="@color/black" />
-
 
         <Button
             android:id="@+id/helpIcon"
