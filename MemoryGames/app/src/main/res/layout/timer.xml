@@ -25,15 +25,13 @@
 
         <TextView
             android:id="@+id/progressText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="31sp"
-            android:fontFamily="@font/roboto_regular"
-            app:layout_constraintBottom_toBottomOf="parent"
+            style="@style/timerText"
+            app:layout_constraintBottom_toBottomOf="@id/progressBar"
+            app:layout_constraintTop_toTopOf="@id/progressBar"
+            tools:text="10s"
             app:layout_constraintEnd_toEndOf="@+id/progressBar"
             app:layout_constraintStart_toStartOf="@+id/progressBar"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:textColor="@color/black" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
