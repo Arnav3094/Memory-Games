@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.Dictionary;
+
 public class WordsFragment_Selection extends Fragment {
 
     Button button1;
@@ -35,6 +37,7 @@ public class WordsFragment_Selection extends Fragment {
     Button[] correctButtonArray;
     String[] UserWords;
     String[] words;
+    Dictionary wordsDictionary;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -99,10 +102,14 @@ public class WordsFragment_Selection extends Fragment {
         }
 
         for (int x = 0; x < 19; x++){
-            buttonArray[x].setText(TotalWords[Integer.parseInt(String.valueOf(Math.random() * 19))]);
+            String word = TotalWords[Integer.parseInt(String.valueOf(Math.random() * 19))];
+            wordsDictionary.put(buttonArray[x],word);
+            buttonArray[x].setText(word);
         }
 
         for (int j = 0; j < 9; j++){
+            wordsDictionary.remove(correctButtonArray[j]);
+            wordsDictionary.put(correctButtonArray[j], words[j]);
             correctButtonArray[j].setText(words[j]);
         }
 /*
