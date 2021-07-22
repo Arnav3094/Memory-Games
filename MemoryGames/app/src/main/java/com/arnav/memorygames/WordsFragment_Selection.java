@@ -9,11 +9,14 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.Dictionary;
 
 public class WordsFragment_Selection extends Fragment {
 
+    int count = 0;
     Button button1;
     Button button2;
     Button button3;
@@ -112,111 +115,255 @@ public class WordsFragment_Selection extends Fragment {
             wordsDictionary.put(correctButtonArray[j], words[j]);
             correctButtonArray[j].setText(words[j]);
         }
-/*
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button1));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button2));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button3));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button4));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button5));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button6));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button7));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button8));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button9));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button10));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button11));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button12));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
         button13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button13));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });button14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button14));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });button15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button15));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });button16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button16));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });button17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button17));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });button18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UserWords[count] = String.valueOf(wordsDictionary.get(button18));
+                count++;
+                if (count >= 8){
+                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                    transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                    transaction.commit();
+                }
             }
         });
-*/
+
 
         Bundle bundle = this.getArguments();
         words = bundle.getStringArray("CorrectWords");
