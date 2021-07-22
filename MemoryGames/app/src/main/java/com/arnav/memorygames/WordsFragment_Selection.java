@@ -1,10 +1,13 @@
 package com.arnav.memorygames;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,11 +15,17 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import org.w3c.dom.Text;
+
 import java.util.Dictionary;
+import java.util.Hashtable;
+import java.util.Random;
 
 public class WordsFragment_Selection extends Fragment {
+    private static final String TAG = "WordsFragment_Selection";
 
     int count = 0;
+    String word;
     Button button1;
     Button button2;
     Button button3;
@@ -35,12 +44,15 @@ public class WordsFragment_Selection extends Fragment {
     Button button16;
     Button button17;
     Button button18;
-    String[] TotalWords;
-    Button[] buttonArray;
-    Button[] correctButtonArray;
-    String[] UserWords;
-    String[] words;
-    Dictionary wordsDictionary;
+    String[] TotalWords = new String[89];
+    Button[] buttonArray = new Button[18];
+    Button[] correctButtonArray = new Button[8];
+    String[] UserWords = new String[8];
+    String[] words = new String[8];
+    CountDownTimer countDownTimer;
+    public int remainingtime;
+    TextView timerText;
+    Dictionary wordsDictionary = new Hashtable<Button, Object>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,6 +62,8 @@ public class WordsFragment_Selection extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        Bundle bundle = this.getArguments();
+        words = bundle.getStringArray("CorrectWords");
 
         TotalWords = new String[]{
                 "consider", "minute", "accord", "evident", "practice", "intend", "conduct", "engage", "obtain", "scarce", "policy", "straight",
@@ -61,7 +75,7 @@ public class WordsFragment_Selection extends Fragment {
                 "keen", "liberal", "despair", "tide", "attitude", "justify", "flag", "merit", "manifest", "notion", "scale", "formal",
                 "resource", "persist", "contempt","bat","ball","cricket","watch"
         }; //90
-
+        timerText = getView().findViewById(R.id.timerText);
         button1 = getView().findViewById(R.id.button1);
         button2 = getView().findViewById(R.id.button2);
         button3 = getView().findViewById(R.id.button3);
@@ -100,19 +114,22 @@ public class WordsFragment_Selection extends Fragment {
         buttonArray[16] = button17;
         buttonArray[17] = button18;
 
-        for (int i = 0; i < 9; i ++ ){
-            correctButtonArray[i] = buttonArray[Integer.parseInt(String.valueOf(Math.random() * 19))];
-        }
+        Random rand = new Random();
 
-        for (int x = 0; x < 19; x++){
-            String word = TotalWords[Integer.parseInt(String.valueOf(Math.random() * 19))];
+        for (int i = 0; i < 8; i ++ ){
+            correctButtonArray[i] = buttonArray[rand.nextInt(17)];
+            }
+
+        Random rand1 = new Random();
+        for (int x = 0; x < 18; x++){
+            word = TotalWords[rand1.nextInt(88)];
             wordsDictionary.put(buttonArray[x],word);
             buttonArray[x].setText(word);
         }
 
-        for (int j = 0; j < 9; j++){
+        for (int j = 0; j < 8; j++){
             wordsDictionary.remove(correctButtonArray[j]);
-            wordsDictionary.put(correctButtonArray[j], words[j]);
+            wordsDictionary.put(correctButtonArray[j], String.valueOf(words[j]));
             correctButtonArray[j].setText(words[j]);
         }
 
@@ -363,10 +380,24 @@ public class WordsFragment_Selection extends Fragment {
                 }
             }
         });
+        countDownTimer = new CountDownTimer(20000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                remainingtime = (int)millisUntilFinished / 1000;
+                timerText.setText(String.valueOf(remainingtime));
+            }
 
-
-        Bundle bundle = this.getArguments();
-        words = bundle.getStringArray("CorrectWords");
+            @Override
+            public void onFinish() {
+                timerText.setText("Time Up");
+                FragmentManager manager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                WordsFragment_Start WordsFragmentStart = new WordsFragment_Start();
+                transaction.replace(R.id.frameLayout, WordsFragmentStart);
+                transaction.commit();
+            }
+        };
+        countDownTimer.start();
 
         super.onViewCreated(view, savedInstanceState);
     }

@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class WordsFragment_Display extends Fragment {
     private static final String TAG = "WordsFragment_Display";
@@ -32,9 +33,9 @@ public class WordsFragment_Display extends Fragment {
     TextView word6;
     TextView word7;
     TextView word8;
-    String[] TotalWords;
-    String[] wordPlaces;
-    String[] words;
+    String[] TotalWords = new String[89];
+    String[] wordPlaces = new String[8];
+    String[] words = new String[8];
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -62,23 +63,23 @@ public class WordsFragment_Display extends Fragment {
                 "compel", "venture", "territory", "temper", "bent", "intimate", "undertake", "majority", "crew", "chamber", "humble", "scheme",
                 "keen", "liberal", "despair", "tide", "attitude", "justify", "flag", "merit", "manifest", "notion", "scale", "formal",
                 "resource", "persist", "contempt","bat","ball","cricket","watch"
-        }; //90
+        }; //89
         timerText = getView().findViewById(R.id.timerText);
 
+        Random rand = new Random();
         for (int i = 0; i < 8; i ++ ){
             wordPlaces[i] = String.valueOf((Math.random() * 91));
-            words[i] = TotalWords[Integer.parseInt(wordPlaces[i])];
+            words[i] = TotalWords[rand.nextInt(80)];
         }
-        for (int j = 1; j < 9; j++){
-            word1.setText(words[0]);
-            word2.setText(words[1]);
-            word3.setText(words[2]);
-            word4.setText(words[3]);
-            word5.setText(words[4]);
-            word6.setText(words[5]);
-            word7.setText(words[6]);
-            word8.setText(words[7]);
-        }
+        word1.setText(words[0]);
+        word2.setText(words[1]);
+        word3.setText(words[2]);
+        word4.setText(words[3]);
+        word5.setText(words[4]);
+        word6.setText(words[5]);
+        word7.setText(words[6]);
+        word8.setText(words[7]);
+
         countDownTimer = new CountDownTimer(5000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
