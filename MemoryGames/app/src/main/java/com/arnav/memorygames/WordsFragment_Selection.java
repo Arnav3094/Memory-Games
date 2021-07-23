@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import org.w3c.dom.Text;
 
+import java.util.Arrays;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Random;
@@ -24,6 +26,7 @@ import java.util.Random;
 public class WordsFragment_Selection extends Fragment {
     private static final String TAG = "WordsFragment_Selection";
 
+    ProgressBar progressBar;
     int count = 0;
     String word;
     Button button1;
@@ -74,7 +77,8 @@ public class WordsFragment_Selection extends Fragment {
                 "compel", "venture", "territory", "temper", "bent", "intimate", "undertake", "majority", "crew", "chamber", "humble", "scheme",
                 "keen", "liberal", "despair", "tide", "attitude", "justify", "flag", "merit", "manifest", "notion", "scale", "formal",
                 "resource", "persist", "contempt","bat","ball","cricket","watch"
-        }; //90
+        }; //89
+        progressBar = getView().findViewById(R.id.progressBar);
         timerText = getView().findViewById(R.id.timerText);
         button1 = getView().findViewById(R.id.button1);
         button2 = getView().findViewById(R.id.button2);
@@ -114,15 +118,32 @@ public class WordsFragment_Selection extends Fragment {
         buttonArray[16] = button17;
         buttonArray[17] = button18;
 
-        Random rand = new Random();
+        Random random = new Random();
 
-        for (int i = 0; i < 8; i ++ ){
-            correctButtonArray[i] = buttonArray[rand.nextInt(17)];
+        for (int i = 0; i < 8; i ++ ) {
+            int random_int = random.nextInt(17);
+            correctButtonArray[i] = buttonArray[random_int];
+
+            /*Arrays.stream(correctButtonArray).sorted();
+            for(int a = 0; a < 7; a++){
+                for (int b = 1; b < 8; b++){
+                    if (correctButtonArray[a] == correctButtonArray[b]){
+                        correctButtonArray[a] = buttonArray[random.nextInt(17)];
+                        b--;
+                    }
+                }
             }
+            */
 
-        Random rand1 = new Random();
+            /*while(contains(button1)){}
+                if (random_int == 1 && contains(button1)){
+
+            }
+        */
+        }
+        Random random1 = new Random();
         for (int x = 0; x < 18; x++){
-            word = TotalWords[rand1.nextInt(88)];
+            word = TotalWords[random1.nextInt(88)];
             wordsDictionary.put(buttonArray[x],word);
             buttonArray[x].setText(word);
         }
@@ -385,6 +406,7 @@ public class WordsFragment_Selection extends Fragment {
             public void onTick(long millisUntilFinished) {
                 remainingtime = (int)millisUntilFinished / 1000;
                 timerText.setText(String.valueOf(remainingtime));
+                progressBar.setProgress(remainingtime*4, false);
             }
 
             @Override
@@ -401,4 +423,14 @@ public class WordsFragment_Selection extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
     }
+public boolean contains(Button givenValue){
+        Boolean found = false;
+        for(Button x : correctButtonArray){
+            if (x == givenValue){
+                found = true;
+            }
+        }
+        return found;
+}
+
 }

@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import java.util.Random;
 
 public class WordsFragment_Display extends Fragment {
     private static final String TAG = "WordsFragment_Display";
+    ProgressBar progressBar;
     TextView timerText;
     public CountDownTimer countDownTimer;
     public int remainingtime;
@@ -34,7 +36,6 @@ public class WordsFragment_Display extends Fragment {
     TextView word7;
     TextView word8;
     String[] TotalWords = new String[89];
-    String[] wordPlaces = new String[8];
     String[] words = new String[8];
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,6 +46,7 @@ public class WordsFragment_Display extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        progressBar = getView().findViewById(R.id.progressBar);
         word1 = getView().findViewById(R.id.word1);
         word2 = getView().findViewById(R.id.word2);
         word3 = getView().findViewById(R.id.word3);
@@ -68,7 +70,6 @@ public class WordsFragment_Display extends Fragment {
 
         Random rand = new Random();
         for (int i = 0; i < 8; i ++ ){
-            wordPlaces[i] = String.valueOf((Math.random() * 91));
             words[i] = TotalWords[rand.nextInt(80)];
         }
         word1.setText(words[0]);
@@ -85,6 +86,7 @@ public class WordsFragment_Display extends Fragment {
             public void onTick(long millisUntilFinished) {
                 remainingtime = (int)millisUntilFinished / 1000;
                 timerText.setText(String.valueOf(remainingtime));
+                progressBar.setProgress(remainingtime * 20, true);
             }
 
             @Override
