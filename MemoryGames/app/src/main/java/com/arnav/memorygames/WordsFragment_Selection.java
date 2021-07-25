@@ -22,7 +22,8 @@ import java.util.Arrays;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Random;
-
+//TODO change button drawable for click button
+//TODO
 public class WordsFragment_Selection extends Fragment {
     private static final String TAG = "WordsFragment_Selection";
 
@@ -401,12 +402,13 @@ public class WordsFragment_Selection extends Fragment {
                 }
             }
         });
-        countDownTimer = new CountDownTimer(20000,1000) {
+        countDownTimer = new CountDownTimer(20000,10) {
             @Override
             public void onTick(long millisUntilFinished) {
                 remainingtime = (int)millisUntilFinished / 1000;
-                timerText.setText(String.valueOf(remainingtime));
-                progressBar.setProgress(remainingtime*4, false);
+                int progress = (int)millisUntilFinished/200;
+                timerText.setText(String.valueOf(remainingtime + 1));
+                progressBar.setProgress(progress, false);
             }
 
             @Override
