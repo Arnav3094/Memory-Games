@@ -88,9 +88,8 @@ public class TilesFragment_Game extends Fragment {
     }
 
 /*    TODO :
-       Error Resolution
-            => when clicking too fast, throws an index out of bounds exception
-            => why is handler doing the stuff twice??
+       Error Resolution:
+            => Toast not working in Start Fragment
        Feature Implementations
             => Timer
        General Feature Implementations
@@ -106,13 +105,35 @@ public class TilesFragment_Game extends Fragment {
         }
         Log.d(TAG, "flipTile: " + index);
 
+        // For the situation when 2 tiles are open and a 3rd is clicked on
+        if (tilesOpened.size() == 2) {
+            // closing the first two tiles
+            if (match(tilesOpened)) {
+                for (Button tile_ : tilesOpened) {
+                    tile_.setVisibility(View.INVISIBLE);
+                    tile_.setEnabled(false);
+                    Log.d(TAG, "run: Tiles matched and made invisible");
+                }
+            } else {
+                for (Button tile_ : tilesOpened) {
+                    setBackgroundRes(tile_, R.drawable.hidden_tile);
+                    Log.d(TAG, "run: Tiles not matched and hidden");
+                }
+            }
+            tilesOpened.clear();
+            // opening the 3rd tile
+            setBackgroundRes(tile, tileDrawables[index]);
+            tilesOpened.add(tile);
+        }
+
         if (tilesOpened.size() < 2) {
+            // Opening a closed tile
             if (!tilesOpened.contains(tile)) {
-                // Opening a closed tile
                 setBackgroundRes(tile, tileDrawables[index]);
                 tilesOpened.add(tile);
-            } else {
-                // Closing an open tile
+            }
+            // Closing an open tile
+            else {
                 setBackgroundRes(tile, R.drawable.hidden_tile);
                 tilesOpened.remove(tile);
             }
@@ -122,28 +143,34 @@ public class TilesFragment_Game extends Fragment {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
+                    for (Button tile : tiles) {
+                        tile.setEnabled(false);
+                    }
                     Log.d(TAG, "run: Running the Handler");
                     if (match(tilesOpened)) {
                         for (Button tile : tilesOpened) {
                             tile.setVisibility(View.INVISIBLE);
                             tile.setEnabled(false);
-                            Log.d(TAG, "run: Tiles matched and made invisible");
                         }
+                        Log.d(TAG, "run: Tiles matched and made invisible");
                     } else {
                         for (Button tile : tilesOpened) {
                             setBackgroundRes(tile, R.drawable.hidden_tile);
-                            Log.d(TAG, "run: Tiles not matched and hidden");
                         }
+                        Log.d(TAG, "run: Tiles not matched and hidden");
                     }
                     tilesOpened.clear();
+                    for (Button tile : tiles) {
+                        tile.setEnabled(true);
+                    }
                 }
-            }, 500);
+            }, 400);
         }
     }
 
     boolean match(ArrayList<Button> arr) {
         boolean bool = false;
-        if (arr.get(0) != arr.get(1)) {
+        if ((arr.size() >= 2) && (arr.get(0) != arr.get(1))) {
             if (getBackgroundResource(arr.get(0)) == getBackgroundResource(arr.get(1))) {
                 bool = true;
                 Log.d(TAG, "match: tile Matched!");
