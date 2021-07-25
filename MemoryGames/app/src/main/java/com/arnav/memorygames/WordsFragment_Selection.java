@@ -124,24 +124,11 @@ public class WordsFragment_Selection extends Fragment {
         for (int i = 0; i < 8; i ++ ) {
             int random_int = random.nextInt(17);
             correctButtonArray[i] = buttonArray[random_int];
-
-            /*Arrays.stream(correctButtonArray).sorted();
-            for(int a = 0; a < 7; a++){
-                for (int b = 1; b < 8; b++){
-                    if (correctButtonArray[a] == correctButtonArray[b]){
-                        correctButtonArray[a] = buttonArray[random.nextInt(17)];
-                        b--;
-                    }
-                }
-            }
-            */
-
-            /*while(contains(button1)){}
-                if (random_int == 1 && contains(button1)){
-
-            }
-        */
         }
+
+        //for(Button i : buttonArray){
+         //   if (i)
+        //}
         Random random1 = new Random();
         for (int x = 0; x < 18; x++){
             word = TotalWords[random1.nextInt(88)];
