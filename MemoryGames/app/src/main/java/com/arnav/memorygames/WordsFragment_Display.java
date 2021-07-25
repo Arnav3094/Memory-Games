@@ -81,13 +81,14 @@ public class WordsFragment_Display extends Fragment {
         word7.setText(words[6]);
         word8.setText(words[7]);
 
-        countDownTimer = new CountDownTimer(5000,1000) {
+        countDownTimer = new CountDownTimer(5000,10) {
             @Override
             public void onTick(long millisUntilFinished) {
                 remainingtime = (int)millisUntilFinished / 1000;
-                timerText.setText(String.valueOf(remainingtime));
-                progressBar.setProgress(remainingtime * 20, true);
-            }
+                int progress = (int)millisUntilFinished/50;
+                timerText.setText(String.valueOf(remainingtime + 1));
+                progressBar.setProgress(progress, true);
+                }
 
             @Override
             public void onFinish() {
