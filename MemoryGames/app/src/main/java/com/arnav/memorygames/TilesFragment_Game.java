@@ -1,12 +1,15 @@
 package com.arnav.memorygames;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +38,10 @@ public class TilesFragment_Game extends Fragment {
 
     ArrayList<Button> tiles;
     ArrayList<Button> tilesOpened;
+    CountDownTimer timer;
+    ProgressBar progressBar;
+    TextView progressText;
+    int pairsMatched;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -62,10 +69,13 @@ public class TilesFragment_Game extends Fragment {
         tile42 = requireView().findViewById(R.id.tile42);
         tile43 = requireView().findViewById(R.id.tile43);
         tile44 = requireView().findViewById(R.id.tile44);
-
+        pairsMatched = 0;
+        progressBar = requireView().findViewById(R.id.progressBar);
+        progressText = requireView().findViewById(R.id.progressText);
         tiles = new ArrayList<>();
         tilesOpened = new ArrayList<>();
         tileDrawablesRes = new ArrayList<>();
+        countDown(30000, 5);
 
         Button[] tilesArray = new Button[]{tile11, tile12, tile13, tile14, tile21, tile22, tile23, tile24, tile31, tile32, tile33, tile34, tile41, tile42, tile43, tile44};
         tiles.addAll(Arrays.asList(tilesArray));
@@ -87,17 +97,6 @@ public class TilesFragment_Game extends Fragment {
         }
     }
 
-/*    TODO :
-       Error Resolution:
-            => Toast not working in Start Fragment
-       Feature Implementations
-            => Timer
-       General Feature Implementations
-            => stop bottomNav for ongoing Game
-            => onClick for start page layout which give toast saying click on start button ...
-            => (maybe) animated start button page
-    */
-
     void flipTile(Button tile) {
         int index = tiles.indexOf(tile);
         if (index >= 8) {
@@ -113,6 +112,11 @@ public class TilesFragment_Game extends Fragment {
                     tile_.setVisibility(View.INVISIBLE);
                     tile_.setEnabled(false);
                     Log.d(TAG, "run: Tiles matched and made invisible");
+                    pairsMatched++;
+                    if (pairsMatched == 8) {
+                        //TODO:  Add onWin() here
+                        break;
+                    }
                 }
             } else {
                 for (Button tile_ : tilesOpened) {
@@ -192,4 +196,27 @@ public class TilesFragment_Game extends Fragment {
         return tileDrawablesRes.get(tiles.indexOf(tile));
     }
 
+    private void countDown(long timeLeftInMillis, int countDownInterval) {
+        timer = new CountDownTimer(timeLeftInMillis, countDownInterval) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                int secondsLeft;
+                int timeInSeconds = (int) (timeLeftInMillis / 1000);
+                int progress = (int) millisUntilFinished / (countDownInterval * timeInSeconds);
+                secondsLeft = (int) millisUntilFinished / 1000;
+                String timeLeftText = "" + (secondsLeft + 1);
+                progressText.setText(timeLeftText);
+                progressBar.setProgress(progress, true);
+            }
+
+            @Override
+            public void onFinish() {
+                if (pairsMatched < 8) {
+                    String time = "Time's up!";
+                    progressText.setText(time);
+                }
+            }
+
+        }.start();
+    }
 }
