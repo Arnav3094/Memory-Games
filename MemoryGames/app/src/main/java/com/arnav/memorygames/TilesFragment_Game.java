@@ -75,7 +75,7 @@ public class TilesFragment_Game extends Fragment {
         tiles = new ArrayList<>();
         tilesOpened = new ArrayList<>();
         tileDrawablesRes = new ArrayList<>();
-        countDown(30000, 5);
+        countDown(30000, 1);
 
         Button[] tilesArray = new Button[]{tile11, tile12, tile13, tile14, tile21, tile22, tile23, tile24, tile31, tile32, tile33, tile34, tile41, tile42, tile43, tile44};
         tiles.addAll(Arrays.asList(tilesArray));
@@ -96,6 +96,16 @@ public class TilesFragment_Game extends Fragment {
             tileDrawablesRes.add(R.drawable.hidden_tile);
         }
     }
+
+/*    TODO :
+       Error Resolution:
+       Feature Implementations
+            => Timer
+       General Feature Implementations
+            => stop bottomNav for ongoing Game
+            => onClick for start page layout which give toast saying click on start button ...
+            => (maybe) animated start button page
+    */
 
     void flipTile(Button tile) {
         int index = tiles.indexOf(tile);
@@ -202,7 +212,7 @@ public class TilesFragment_Game extends Fragment {
             public void onTick(long millisUntilFinished) {
                 int secondsLeft;
                 int timeInSeconds = (int) (timeLeftInMillis / 1000);
-                int progress = (int) millisUntilFinished / (countDownInterval * timeInSeconds);
+                int progress = (int) millisUntilFinished / (countDownInterval * 10 * timeInSeconds);
                 secondsLeft = (int) millisUntilFinished / 1000;
                 String timeLeftText = "" + (secondsLeft + 1);
                 progressText.setText(timeLeftText);
