@@ -99,11 +99,10 @@ public class TilesFragment_Game extends Fragment {
 
 /*    TODO :
        Error Resolution:
-       Feature Implementations
-            => Timer
+            => 3rd button not opening
+       Feature Implementations:
        General Feature Implementations
             => stop bottomNav for ongoing Game
-            => onClick for start page layout which give toast saying click on start button ...
             => (maybe) animated start button page
     */
 
@@ -125,11 +124,6 @@ public class TilesFragment_Game extends Fragment {
                         Log.d(TAG, "run: Tiles matched and made invisible");
                         pairsMatched++;
 
-                        // opening the third tile
-                        setBackgroundRes(tile, tileDrawables[index]);
-                        tilesOpened.add(tile);
-                        Log.d(TAG, "flipTile: Opened the third tile");
-
                         // checking win condition
                         if (pairsMatched == 8) {
                               //TODO:  Add onWin() here
@@ -142,9 +136,11 @@ public class TilesFragment_Game extends Fragment {
                         Log.d(TAG, "run: Tiles not matched and hidden");
                   }
                   tilesOpened.clear();
+
                   // opening the 3rd tile
                   setBackgroundRes(tile, tileDrawables[index]);
                   tilesOpened.add(tile);
+                  Log.d(TAG, "flipTile: Opened the third tile");
             }
 
             if (tilesOpened.size() < 2) {
