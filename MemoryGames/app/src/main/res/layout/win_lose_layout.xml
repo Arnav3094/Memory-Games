@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="20dp"
+    tools:background="@color/default_background">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!--No URL has been added, it will be added programmatically-->
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:background="#07000000"
+                app:lottie_autoPlay="true"
+                tools:layout_editor_absoluteY="10dp"
+                tools:lottie_url="https://assets10.lottiefiles.com/private_files/lf30_dCzDJu.json" />
+
+            <!--No text has been added, it will be added programmatically-->
+            <TextView
+                android:id="@+id/alertText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#07000000"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textSize="20sp"
+                tools:text="hello" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

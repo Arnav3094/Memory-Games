@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                 }
+
                 assert selectedFragment != null;
                 getSupportFragmentManager()
                         .beginTransaction()
