@@ -25,10 +25,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"
-                android:background="#07000000"
                 app:lottie_autoPlay="true"
-                tools:layout_editor_absoluteY="10dp"
-                tools:lottie_url="https://assets10.lottiefiles.com/private_files/lf30_dCzDJu.json" />
+                tools:layout_editor_absoluteY="10dp" />
 
             <!--No text has been added, it will be added programmatically-->
             <TextView
