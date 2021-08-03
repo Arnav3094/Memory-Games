@@ -51,6 +51,7 @@ public class WordsFragment_Selection extends Fragment {
     String[] TotalWords = new String[89];
     Button[] buttonArray = new Button[18];
     Button[] correctButtonArray = new Button[8];
+    Button[] incorrectButtonArray = new Button[10];
     String[] UserWords = new String[8];
     String[] words = new String[8];
     CountDownTimer countDownTimer;
@@ -126,9 +127,14 @@ public class WordsFragment_Selection extends Fragment {
             correctButtonArray[i] = buttonArray[random_int];
         }
 
-        //for(Button i : buttonArray){
-         //   if (i)
-        //}
+        for(Button i : buttonArray){
+            int x = 0;
+            if (belongsto(i)){}
+            else{
+                incorrectButtonArray[x] = i;
+                x++;
+            }
+        }
         Random random1 = new Random();
         for (int x = 0; x < 18; x++){
             word = TotalWords[random1.nextInt(88)];
@@ -412,14 +418,43 @@ public class WordsFragment_Selection extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
     }
-public boolean contains(Button givenValue){
-        Boolean found = false;
-        for(Button x : correctButtonArray){
-            if (x == givenValue){
-                found = true;
-            }
-        }
-        return found;
+//public boolean contains(Button givenValue){
+  //      Boolean found = false;
+    //    for(Button x : correctButtonArray){
+      //      if (x == givenValue){
+        //        found = true;
+          //  }
+        //}
+        //return found;
+//}
+public boolean belongsto(Button givenValue){
+    boolean condition = false;
+    if (givenValue == correctButtonArray[0]){
+        condition = true;
+    }
+    if (givenValue == correctButtonArray[1]){
+        condition = true;
+    }
+    if (givenValue == correctButtonArray[2]){
+        condition = true;
+    }
+    if (givenValue == correctButtonArray[3]){
+        condition = true;
+    }
+    if (givenValue == correctButtonArray[4]){
+        condition = true;
+    }
+    if (givenValue == correctButtonArray[5]){
+        condition = true;
+    }
+    if (givenValue == correctButtonArray[6]){
+        condition = true;
+    }
+    if (givenValue == correctButtonArray[7]){
+        condition = true;
+    }if (givenValue == correctButtonArray[8]){
+        condition = true;
+    }
+    return condition;
 }
-
 }
