@@ -101,7 +101,7 @@ public class TilesFragment_Game extends Fragment {
        Error Resolution:
             => 3rd button not opening
        Feature Implementations:
-       General Feature Implementations
+       General Feature Implementations:
             => stop bottomNav for ongoing Game
             => (maybe) animated start button page
     */
@@ -126,7 +126,7 @@ public class TilesFragment_Game extends Fragment {
 
                         // checking win condition
                         if (pairsMatched == 8) {
-                              //TODO:  Add onWin() here
+                              onWin();
                         }
 
                   } else {
@@ -174,7 +174,7 @@ public class TilesFragment_Game extends Fragment {
 
                                     // checking win condition
                                     if (pairsMatched == 8) {
-                                          //TODO:  Add onWin() here
+                                          onWin();
                                     }
 
                               } else {
@@ -191,6 +191,15 @@ public class TilesFragment_Game extends Fragment {
 //                TODO : change delay back to 400
                   }, 750);
             }
+      }
+
+      public void onWin() {
+            WinLoseDialog dialog = new WinLoseDialog(getActivity());
+            dialog.startDialog();
+      }
+
+      public void onLose() {
+
       }
 
       boolean match(ArrayList<Button> arr) {
@@ -235,6 +244,7 @@ public class TilesFragment_Game extends Fragment {
                         if (pairsMatched < 8) {
                               String time = "Time's up!";
                               progressText.setText(time);
+                              onLose();
                         }
                   }
 
