@@ -54,6 +54,7 @@ public class WordsFragment_Selection extends Fragment {
     Button[] incorrectButtonArray = new Button[10];
     String[] UserWords = new String[8];
     String[] words = new String[8];
+    String[] incorrectwords = new String[81];
     CountDownTimer countDownTimer;
     public int remainingtime;
     TextView timerText;
@@ -133,6 +134,15 @@ public class WordsFragment_Selection extends Fragment {
             else{
                 incorrectButtonArray[x] = i;
                 x++;
+            }
+        }
+
+        for (String i : TotalWords){
+            int x2 = 0;
+            if (belongstowords(i)){}
+            else{
+                incorrectwords[x2] = i;
+                x2++;
             }
         }
         Random random1 = new Random();
@@ -452,9 +462,36 @@ public boolean belongsto(Button givenValue){
     }
     if (givenValue == correctButtonArray[7]){
         condition = true;
-    }if (givenValue == correctButtonArray[8]){
-        condition = true;
     }
     return condition;
+}
+public Boolean belongstowords(String Given){
+        Boolean condition2 = false;
+        if (words[0] == Given){
+            condition2 = true;
+        }
+    if (words[1] == Given){
+        condition2 = true;
+    }
+    if (words[2] == Given){
+        condition2 = true;
+    }
+    if (words[3] == Given){
+        condition2 = true;
+    }
+    if (words[4] == Given){
+        condition2 = true;
+    }
+    if (words[5] == Given){
+        condition2 = true;
+    }
+    if (words[6] == Given){
+        condition2 = true;
+    }
+    if (words[7] == Given){
+        condition2 = true;
+    }
+
+        return condition2;
 }
 }
