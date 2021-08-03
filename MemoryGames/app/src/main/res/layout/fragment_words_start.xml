@@ -3,22 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".WordsFragment_Start">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/numberAppearText"
+            android:id="@+id/wordsAppearText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/number_box"
+
+            android:background="@drawable/words_display"
             android:fontFamily="@font/roboto_thin"
+            android:text="@string/words_will_appear_here"
+            android:textColor="@color/default_button_color"
+            android:textSize="25sp"
             android:gravity="center"
-            android:text="@string/number_appear"
-            android:textColor="@color/white"
-            android:textSize="22sp"
+
             app:layout_constraintBottom_toTopOf="@+id/startButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,14 +29,13 @@
 
         <Button
             android:id="@+id/startButton"
-            style="@style/startButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            style="@style/startButtonStyle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberAppearText" />
+            app:layout_constraintTop_toBottomOf="@+id/wordsAppearText" />
 
         <Button
             android:id="@+id/helpIcon"

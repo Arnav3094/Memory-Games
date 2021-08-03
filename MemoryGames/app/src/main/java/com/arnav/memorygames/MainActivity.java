@@ -3,12 +3,10 @@ package com.arnav.memorygames;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -24,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialisations
         bottomNavBar = findViewById(R.id.bottom_nav_bar);
-        TilesFragment tilesFragment = new TilesFragment();
+        TilesFragment_Start tilesFragmentStart = new TilesFragment_Start();
 
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frameLayout, tilesFragment).commit();
+        transaction.replace(R.id.frameLayout, tilesFragmentStart).commit();
 
         bottomNavBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -36,17 +34,17 @@ public class MainActivity extends AppCompatActivity {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()){
                     case (R.id.tiles_bottom):
-                        selectedFragment = new TilesFragment();
+                        selectedFragment = new TilesFragment_Start();
                         break;
 
-/*                  Add the code for the cases below =>>
-
                     case (R.id.words_bottom):
+                        selectedFragment = new WordsFragment_Start();
                         break;
 
                     case (R.id.numbers_bottom):
+                        selectedFragment = new NumbersFragment();
                         break;
-*/
+
                 }
 
                 assert selectedFragment != null;
