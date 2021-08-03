@@ -5,12 +5,12 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:padding="20dp"
-    tools:background="@color/default_background">
+    android:padding="20dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/default_background"
         app:cardCornerRadius="10dp">
 
         <LinearLayout
@@ -21,23 +21,19 @@
 
             <!--No URL has been added, it will be added programmatically-->
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"
-                app:lottie_autoPlay="true"
-                tools:layout_editor_absoluteY="10dp" />
+                app:lottie_autoPlay="true" />
 
             <!--No text has been added, it will be added programmatically-->
             <TextView
                 android:id="@+id/alertText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#07000000"
-                android:gravity="center"
-                android:padding="5dp"
-                android:textSize="20sp"
-                tools:text="hello" />
+                style="@style/alertDialogText"
+                tools:text="hi" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
