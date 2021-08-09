@@ -14,4 +14,13 @@
     <color name="darker_button_color">#58253d</color>
     <color name="green_section">#C3F1BE</color>
     <color name="gray">#d3d3d3</color>
+
+    <color name="tile_red">#FF4D4D</color>
+    <color name="tile_blue">#42B0F5</color>
+    <color name="tile_green">#62FF55</color>
+    <color name="tile_cyan">#17EBCB</color>
+    <color name="tile_orange">#FFAD12</color>
+    <color name="tile_purple">#9163F8</color>
+    <color name="tile_maroon">#644A4A</color>
+    <color name="tile_yellow">#E9F039</color>
 </resources>

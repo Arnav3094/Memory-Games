@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TilesFragment_Start"
+    android:layout_gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/constraintLayout"
+        android:layout_height="match_parent">
+
+
+        <Button
+            android:id="@+id/startButton"
+            style="@style/startButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineBottom" />
+
+
+        <LinearLayout
+            android:id="@+id/grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tiles_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/row1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/tilesBackground"
+                app:layout_constraintStart_toStartOf="@+id/tilesBackground">
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/tilesBackground"
+                app:layout_constraintStart_toStartOf="@+id/tilesBackground">
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/tilesBackground"
+                app:layout_constraintStart_toStartOf="@+id/tilesBackground">
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/tilesBackground"
+                app:layout_constraintStart_toStartOf="@+id/tilesBackground">
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+                <Button style="@style/tile" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/helpIcon"
+            style="@style/helpIconStyle"
+            android:text="\?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.99" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.76" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
