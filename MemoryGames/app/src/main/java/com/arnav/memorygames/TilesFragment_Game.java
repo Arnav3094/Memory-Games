@@ -14,6 +14,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,10 +29,6 @@ public class TilesFragment_Game extends Fragment {
               R.drawable.tile_green, R.drawable.tile_maroon, R.drawable.tile_orange,
               R.drawable.tile_purple, R.drawable.tile_red, R.drawable.tile_yellow};
 
-      final int[] position = new int[]
-              {11, 12, 13, 14, 21, 22, 23, 24,
-                      31, 32, 33, 34, 41, 42, 43, 44};
-
       Button tile11, tile12, tile13, tile14, tile21, tile22, tile23, tile24,
               tile31, tile32, tile33, tile34, tile41, tile42, tile43, tile44;
 
@@ -40,8 +38,9 @@ public class TilesFragment_Game extends Fragment {
       ArrayList<Button> tilesOpened;
       CountDownTimer timer;
       ProgressBar progressBar;
-      TextView progressText;
+      TextView progressText, timeRemainingText;
       int pairsMatched;
+      WinLoseDialog dialog;
 
       @Override
       public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -69,6 +68,7 @@ public class TilesFragment_Game extends Fragment {
             tile42 = requireView().findViewById(R.id.tile42);
             tile43 = requireView().findViewById(R.id.tile43);
             tile44 = requireView().findViewById(R.id.tile44);
+            timeRemainingText = requireView().findViewById(R.id.timeRemainingText);
             pairsMatched = 0;
             progressBar = requireView().findViewById(R.id.progressBar);
             progressText = requireView().findViewById(R.id.progressText);
@@ -123,7 +123,6 @@ public class TilesFragment_Game extends Fragment {
                         }
                         Log.d(TAG, "run: Tiles matched and made invisible");
                         pairsMatched++;
-
                         // checking win condition
                         if (pairsMatched == 8) {
                               onWin();
@@ -142,7 +141,7 @@ public class TilesFragment_Game extends Fragment {
                   tilesOpened.add(tile);
                   Log.d(TAG, "flipTile: Opened the third tile");
             }
-
+            // For situation when only 1 or no tiles have been opened
             if (tilesOpened.size() < 2) {
                   // Opening a closed tile
                   if (!tilesOpened.contains(tile)) {
@@ -156,6 +155,7 @@ public class TilesFragment_Game extends Fragment {
                   }
             }
 
+            // two tiles are now open
             if (tilesOpened.size() == 2) {
                   new Handler().postDelayed(new Runnable() {
                         @Override
@@ -188,18 +188,39 @@ public class TilesFragment_Game extends Fragment {
                                     tile.setEnabled(true);
                               }
                         }
-//                TODO : change delay back to 400
-                  }, 750);
+                  }, 500);
             }
       }
 
       public void onWin() {
-            WinLoseDialog dialog = new WinLoseDialog(getActivity());
+            dialog = new WinLoseDialog(getActivity(), R.raw.check_animation, "Yay! You win!");
             dialog.startDialog();
+            dialog.show();
+            onEnd();
       }
 
       public void onLose() {
+            dialog = new WinLoseDialog(getActivity(), R.raw.error_animation,
+                    "Oh No!\nYou were unable to match " + (8 - pairsMatched) * 2 + " tiles");
+            dialog.startDialog();
+            dialog.show();
+            onEnd();
+      }
 
+      public void onEnd() {
+            FragmentManager manager = requireActivity().getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction
+                    .replace(R.id.frameLayout, new TilesFragment_Start())
+                    .commit();
+            timeRemainingText.setVisibility(View.GONE);
+            timer.cancel();
+            new Handler().postDelayed(new Runnable() {
+                  @Override
+                  public void run() {
+                        dialog.dismiss();
+                  }
+            }, 10000);
       }
 
       boolean match(ArrayList<Button> arr) {
@@ -242,8 +263,8 @@ public class TilesFragment_Game extends Fragment {
                   @Override
                   public void onFinish() {
                         if (pairsMatched < 8) {
-                              String time = "Time's up!";
-                              progressText.setText(time);
+                              String timeUp = "Time's up!";
+                              progressText.setText(timeUp);
                               onLose();
                         }
                   }
