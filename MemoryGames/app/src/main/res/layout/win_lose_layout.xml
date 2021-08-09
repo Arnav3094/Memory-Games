@@ -13,27 +13,49 @@
         app:cardBackgroundColor="@color/default_background"
         app:cardCornerRadius="10dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
+            android:minHeight="300dp"
             android:orientation="vertical"
             android:padding="10dp">
 
+            <ImageView
+                android:id="@+id/close"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_baseline_close_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0" />
+
             <!--No URL has been added, it will be added programmatically-->
             <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="10dp"
+                app:layout_constraintBottom_toTopOf="@id/alertText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:lottie_autoPlay="true" />
 
             <!--No text has been added, it will be added programmatically-->
             <TextView
                 android:id="@+id/alertText"
+                style="@style/alertDialogText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/alertDialogText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lottie"
                 tools:text="hi" />
-        </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
