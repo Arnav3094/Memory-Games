@@ -45,7 +45,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1" />
 
-        <TextView
+        <!--<TextView
             android:id="@+id/timerText"
             style="@style/timerText"
             tools:textColor="@color/black"
@@ -54,7 +54,7 @@
             app:layout_constraintEnd_toEndOf="@+id/numbersDisplayTimer"
             app:layout_constraintStart_toStartOf="@+id/numbersDisplayTimer"
             app:layout_constraintTop_toTopOf="@+id/numbersDisplayTimer" />
-
+-->
         <Button
             android:id="@+id/helpIcon"
             style="@style/helpIconStyle"
@@ -64,7 +64,8 @@
             app:layout_constraintHorizontal_bias="0.99"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.99" />
+            app:layout_constraintVertical_bias="0.99"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

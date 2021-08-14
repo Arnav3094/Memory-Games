@@ -2,10 +2,10 @@ package com.arnav.memorygames;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,17 +14,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import java.util.Random;
-
 public class NumbersFragment_Display extends Fragment {
+
     private static final String TAG = "NumbersFragment_Display";
-    //public interface Number1{
-      //  void sendNumber(int numberToPass);
-    //}
-    TextView Number;
-    TextView timerText;
-    public CountDownTimer countDownTimer;
-    public int remainingtime = 5;
+    final long lim = 9_999_999_999L;
+    TextView numberText;
+    TextView progressText;
+    CountDownTimer timer;
+    long number;
+    ProgressBar progressBar;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,38 +34,50 @@ public class NumbersFragment_Display extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Number = getView().findViewById(R.id.Number);
-        timerText = getView().findViewById(R.id.timerText);
 
-        int[] random_integer = new int[0];
-        Random rand = new Random();
-        random_integer = new int[]{rand.nextInt(1000000000 - 99999999 + 1) + 9999};
-        int randomint = random_integer[0];
-        Number.setText(String.valueOf(randomint));
+        numberText = requireView().findViewById(R.id.Number);
+        progressText = requireView().findViewById(R.id.progressText);
+        number = (long) (Math.random() * lim);
+        progressBar = requireView().findViewById(R.id.progressBar);
+        countDown(5000, 1);
+        String text = "" + number;
+        numberText.setText(text);
 
-        countDownTimer = new CountDownTimer(5000,1000) {
+    }
+
+    private void countDown(long timeLeftInMillis, int countDownInterval) {
+        timer = new CountDownTimer(timeLeftInMillis, countDownInterval) {
+            final int timeInSeconds = (int) (timeLeftInMillis / 1000);
+            int secondsLeft;
+            int progress;
+            String timeLeftText;
+
             @Override
             public void onTick(long millisUntilFinished) {
-                remainingtime = (int)millisUntilFinished / 1000;
-                timerText.setText(String.valueOf(remainingtime));
+
+                secondsLeft = (int) millisUntilFinished / 1000;
+                progress = (int) millisUntilFinished / (countDownInterval * 10 * timeInSeconds);
+                timeLeftText = "" + (secondsLeft + 1);
+                progressText.setText(timeLeftText);
+                progressBar.setProgress(progress, true);
             }
 
             @Override
             public void onFinish() {
-                timerText.setText("Time Up");
-                FragmentManager manager = getActivity().getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                NumbersFragment_Keypad NumbersKeypadFragment = new NumbersFragment_Keypad();
-
-                Log.d(TAG, "onFinish: Sending Number");
+                String timeUp = "Time's Up!";
+                progressText.setText(timeUp);
                 Bundle bundle = new Bundle();
-                bundle.putInt("CorrectNumber", randomint);
-                NumbersKeypadFragment.setArguments(bundle);
+                bundle.putLong("CorrectNum", number);
+                NumbersFragment_Keypad keypad = new NumbersFragment_Keypad();
+                keypad.setArguments(bundle);
+                FragmentManager manager = requireActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction
+                        .replace(R.id.frameLayout, keypad)
+                        .commit();
 
-                transaction.replace(R.id.frameLayout, NumbersKeypadFragment);
-                transaction.commit();
             }
-        };
-        countDownTimer.start();
+        }.start();
     }
+
 }
