@@ -11,4 +11,8 @@
     <string name="start">Start</string>
     <string name="time_remaining">Time Remaining:</string>
     <string name="type_the_number">Type in the Number:</string>
+    <string name="words_will_appear_here">Words will appear here</string>
+    <string name="words_will_disappear_in">Words will disappear in:</string>
+    <string name="choose_the_correct_words">Choose the correct words:</string>
+    <string name="done_text">Done!</string>
 </resources>
