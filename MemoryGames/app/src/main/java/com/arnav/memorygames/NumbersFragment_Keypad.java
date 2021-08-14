@@ -83,13 +83,7 @@ public class NumbersFragment_Keypad extends Fragment {
 
             countDown(15000, 1);
 /*            countDownTimer = new CountDownTimer(15000, 1000) {
-                  @Override
-                  public void onTick(long millisUntilFinished) {
-                        remainingtime = (int) millisUntilFinished / 1000;
-                        progressText.setText(String.valueOf(remainingtime));
-                  }
 
-                  @Override
                   public void onFinish() {
                         progressText.setText("Time Up");
                         correctnum = "" + number;
@@ -100,15 +94,7 @@ public class NumbersFragment_Keypad extends Fragment {
                               UserNumber = "";
                               keypadText.setText("Incorrect");
                         }
-                        FragmentManager manager = getActivity().getSupportFragmentManager();
-                        FragmentTransaction transaction = manager.beginTransaction();
-                        NumbersFragment_Start NumberFragment_Start = new NumbersFragment_Start();
-                        transaction.replace(R.id.frameLayout, NumberFragment_Start);
-                        transaction.commit();
-                  }
-
-            };
-            countDownTimer.start();*/
+            */
       }
 
       private void countDown(long timeLeftInMillis, int countDownInterval) {
