@@ -2,6 +2,7 @@ package com.arnav.memorygames;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,12 +30,13 @@ public class NumbersFragment_Keypad extends Fragment {
       Button[] keysArray;
       ProgressBar progressBar;
       ArrayList<Button> keys;
-      TextView progressText, keypadText;
+      TextView progressText, keypadText, timeRemainingText;
       CountDownTimer timer;
+      WinLoseDialog dialog;
+      ConstraintLayout constraint;
 
       @Override
-      public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                               Bundle savedInstanceState) {
+      public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             return inflater.inflate(R.layout.fragment_numbers_keypad, container, false);
       }
 
@@ -45,6 +51,8 @@ public class NumbersFragment_Keypad extends Fragment {
             keypadText = requireView().findViewById(R.id.keypadText);
             progressBar = requireView().findViewById(R.id.progressBar);
             progressText = requireView().findViewById(R.id.progressText);
+            constraint = requireView().findViewById(R.id.constraint);
+            timeRemainingText = requireView().findViewById(R.id.timeRemainingText);
 
             b1 = requireView().findViewById(R.id.keypad1);
             b2 = requireView().findViewById(R.id.keypad2);
@@ -69,32 +77,16 @@ public class NumbersFragment_Keypad extends Fragment {
                   keys.get(i).setOnClickListener(onClick(i));
             }
 
-            del.setOnClickListener(new View.OnClickListener() {
-                  @Override
-                  public void onClick(View v) {
-                        String text = (String) keypadText.getText();
-                        if (text.length() > 0) {
-                              text = text.substring(0, text.length() - 1);
-                        }
-                        keypadText.setText(text);
+            del.setOnClickListener(v -> {
+                  String text = (String) keypadText.getText();
+                  if (text.length() > 0) {
+                        text = text.substring(0, text.length() - 1);
                   }
+                  keypadText.setText(text);
             });
 
 
             countDown(15000, 1);
-/*            countDownTimer = new CountDownTimer(15000, 1000) {
-
-                  public void onFinish() {
-                        progressText.setText("Time Up");
-                        correctnum = "" + number;
-                        if (UserNumber.equals(correctnum)) {
-                              UserNumber = "";
-                              keypadText.setText("Correct");
-                        } else if (UserNumber.equals(correctnum)) {
-                              UserNumber = "";
-                              keypadText.setText("Incorrect");
-                        }
-            */
       }
 
       private void countDown(long timeLeftInMillis, int countDownInterval) {
@@ -119,10 +111,8 @@ public class NumbersFragment_Keypad extends Fragment {
                         progressText.setText(timeUp);
                         if (keypadText.getText().toString().equals(Long.toString(number))) {
                               onWin();
-                              // TODO: Add the win fragment
                         } else {
                               onLose();
-                              // TODO: Add the lose fragment
                         }
                   }
 
@@ -130,26 +120,48 @@ public class NumbersFragment_Keypad extends Fragment {
       }
 
       private void onLose() {
-
+            String msg = "Oh No!\n" +
+                    "\nThe Correct Number was:" +
+                    "\n" + number +
+                    "\n\n You entered:" +
+                    "\n" + keypadText.getText().toString();
+            dialog = new WinLoseDialog(getActivity(), R.raw.error_animation, msg);
+            dialog.startDialog();
+            dialog.show();
+            onEnd();
       }
 
       private void onWin() {
+            dialog = new WinLoseDialog(getActivity(), R.raw.check_animation, "Yay!\nYou got it correct!");
+            dialog.startDialog();
+            dialog.show();
+            onEnd();
+      }
 
+      private void onEnd() {
+            FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frameLayout, new NumbersFragment_Start())
+                    .commit();
+            timeRemainingText.setVisibility(View.GONE);
+            timer.cancel();
+            new Handler().postDelayed(() -> dialog.dismiss(), 10000);
       }
 
       public View.OnClickListener onClick(int num) {
-            View.OnClickListener f = new View.OnClickListener() {
-                  @Override
-                  public void onClick(View v) {
-                        addToKeypadText("" + num);
-                  }
-            };
-            return f;
+            return v -> addToKeypadText("" + num);
       }
 
       public void addToKeypadText(String str) {
-            String newText = keypadText.getText().toString() + str;
-            keypadText.setText(newText);
+            if (keypadText.getText().toString().length() < 12) {
+                  String newText = keypadText.getText().toString() + str;
+                  keypadText.setText(newText);
+            } else {
+                  Log.d(TAG, "addToKeypadText: Toast");
+                  Snackbar.make(constraint, "The number isn't that long", 900)
+                          .setAnimationMode(Snackbar.ANIMATION_MODE_FADE)
+                          .show();
+//                  Toast.makeText(requireActivity().getBaseContext(), "The number isn't that long", Toast.LENGTH_SHORT).show();
+            }
       }
 
 }
