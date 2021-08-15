@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +14,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class NumbersFragment_Start extends Fragment {
 
@@ -24,8 +25,7 @@ public class NumbersFragment_Start extends Fragment {
       ConstraintLayout constraintLayout;
 
       @Override
-      public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                               Bundle savedInstanceState) {
+      public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             return inflater.inflate(R.layout.fragment_numbers_start, container, false);
       }
 
@@ -56,7 +56,10 @@ public class NumbersFragment_Start extends Fragment {
 
       void incorrectClick() {
             Log.d(TAG, "incorrectClick: ");
-            Toast.makeText(requireActivity().getBaseContext(), "Please click the 'Start' button to begin", Toast.LENGTH_SHORT).show();
+            Snackbar.make(constraintLayout, "Please click the 'Start' button to begin", 900)
+                    .setAnimationMode(Snackbar.ANIMATION_MODE_FADE)
+                    .show();
+//            Toast.makeText(requireActivity().getBaseContext(), "Please click the 'Start' button to begin", Toast.LENGTH_SHORT).show();
       }
 
       private void countDown(long timeLeftInMillis) {
