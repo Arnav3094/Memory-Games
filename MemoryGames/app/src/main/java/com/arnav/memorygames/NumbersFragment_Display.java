@@ -17,7 +17,8 @@ import androidx.fragment.app.FragmentTransaction;
 public class NumbersFragment_Display extends Fragment {
 
       private static final String TAG = "NumbersFragment_Display";
-      final long lim = 9_999_999_999L;
+      final long upLim = 999_999_999L;
+      final long lowLim = 100_000_000L;
       TextView numberText;
       TextView progressText;
       CountDownTimer timer;
@@ -37,7 +38,7 @@ public class NumbersFragment_Display extends Fragment {
 
             numberText = requireView().findViewById(R.id.Number);
             progressText = requireView().findViewById(R.id.progressText);
-            number = (long) (Math.random() * lim);
+            number = (long) ((Math.random() * (upLim - lowLim + 1)) + lowLim);
             progressBar = requireView().findViewById(R.id.progressBar);
             countDown(5000, 1);
             String text = "" + number;
