@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/keypad_edit_text_background.xml" value="0.2574074074074074" />
         <entry key="app/src/main/res/drawable/keypad_ripple.xml" value="0.2777777777777778" />
+        <entry key="app/src/main/res/drawable/start_button.xml" value="0.2574074074074074" />
         <entry key="app/src/main/res/layout/fragment_numbers_display.xml" value="0.19296370063906482" />
         <entry key="app/src/main/res/layout/fragment_numbers_keypad.xml" value="0.2233259965301993" />
         <entry key="app/src/main/res/layout/win_lose_layout.xml" value="0.12993920972644377" />
