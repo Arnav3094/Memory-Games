@@ -40,7 +40,7 @@ public class NumbersFragment_Display extends Fragment {
             progressText = requireView().findViewById(R.id.progressText);
             number = (long) ((Math.random() * (upLim - lowLim + 1)) + lowLim);
             progressBar = requireView().findViewById(R.id.progressBar);
-            countDown(5000, 1);
+            countDown(7000, 1);
             String text = "" + number;
             numberText.setText(text);
 
