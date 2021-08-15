@@ -7,16 +7,17 @@
     tools:context=".NumbersFragment_Keypad">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
         android:id="@+id/constraint"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/typeTheNumber"
             style="@style/typeTheNumber"
-            android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toTopOf="@+id/keypadText"
             app:layout_constraintEnd_toEndOf="@+id/keypadText"
             app:layout_constraintStart_toStartOf="@+id/keypadText"
+            app:layout_constraintTop_toTopOf="parent"
             tools:textColor="@color/black" />
 
         <TextView
@@ -25,7 +26,7 @@
             app:layout_constraintBottom_toTopOf="@+id/keypad"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/typeTheNumber"
             tools:ignore="TextContrastCheck"
             tools:text="12312487243" />
 
@@ -34,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@id/timeRemainingText"
+            app:layout_constraintBottom_toTopOf="@id/submit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/keypadText">
@@ -145,14 +146,28 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/submit"
+            style="@style/startButtonStyle"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:background="@drawable/start_button"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="@string/submit"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/timeRemainingText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/keypad" />
 
         <TextView
             android:id="@+id/timeRemainingText"
             style="@style/textAboveTimer"
             android:text="@string/time_remaining"
             app:layout_constraintBottom_toTopOf="@id/numbersKeypadTimer"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             tools:ignore="TextContrastCheck" />
 
         <include
@@ -165,7 +180,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1" />
-
 
         <Button
             android:id="@+id/helpIcon"
