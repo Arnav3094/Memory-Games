@@ -26,7 +26,7 @@ public class NumbersFragment_Keypad extends Fragment {
 
       private static final String TAG = "NumbersFragment_Keypad";
       long number;
-      Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, del;
+      Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, del, submit;
       Button[] keysArray;
       ProgressBar progressBar;
       ArrayList<Button> keys;
@@ -34,6 +34,7 @@ public class NumbersFragment_Keypad extends Fragment {
       CountDownTimer timer;
       WinLoseDialog dialog;
       ConstraintLayout constraint;
+      boolean submitClicked;
 
       @Override
       public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class NumbersFragment_Keypad extends Fragment {
             progressText = requireView().findViewById(R.id.progressText);
             constraint = requireView().findViewById(R.id.constraint);
             timeRemainingText = requireView().findViewById(R.id.timeRemainingText);
+            submit = requireView().findViewById(R.id.submit);
 
             b1 = requireView().findViewById(R.id.keypad1);
             b2 = requireView().findViewById(R.id.keypad2);
@@ -65,8 +67,8 @@ public class NumbersFragment_Keypad extends Fragment {
             b9 = requireView().findViewById(R.id.keypad9);
             b0 = requireView().findViewById(R.id.keypad0);
             del = requireView().findViewById(R.id.deleteButton);
-            Log.d(TAG, "onViewCreated: ");
 
+            submitClicked = false;
             keysArray = new Button[]{b0, b1, b2, b3, b4, b5, b6, b7, b8, b9};
             Log.d(TAG, "onViewCreated: " + Arrays.toString(keysArray));
             keys = new ArrayList<>();
@@ -83,6 +85,14 @@ public class NumbersFragment_Keypad extends Fragment {
                         text = text.substring(0, text.length() - 1);
                   }
                   keypadText.setText(text);
+            });
+
+            submit.setOnClickListener(v -> {
+                  if (keypadText.getText().toString().equals(Long.toString(number))) {
+                        onWin();
+                  } else {
+                        onLose();
+                  }
             });
 
 
@@ -120,8 +130,8 @@ public class NumbersFragment_Keypad extends Fragment {
       }
 
       private void onLose() {
-            String msg = "Oh No!\n" +
-                    "\nThe Correct Number was:" +
+            String msg = "Oh No!" +
+                    "\n\nThe Correct Number was:" +
                     "\n" + number +
                     "\n\n You entered:" +
                     "\n" + keypadText.getText().toString();
