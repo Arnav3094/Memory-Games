@@ -14,6 +14,7 @@
         <TextView
             android:id="@+id/typeTheNumber"
             style="@style/typeTheNumber"
+            android:text="@string/type_the_number"
             app:layout_constraintBottom_toTopOf="@+id/keypadText"
             app:layout_constraintEnd_toEndOf="@+id/keypadText"
             app:layout_constraintStart_toStartOf="@+id/keypadText"
