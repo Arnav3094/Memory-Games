@@ -13,8 +13,8 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:indeterminateOnly="false"
             android:progressDrawable="@drawable/layers_timer"
             app:layout_constraintBottom_toBottomOf="parent"
