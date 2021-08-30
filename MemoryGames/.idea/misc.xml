@@ -7,9 +7,14 @@
         <entry key="app/src/main/res/drawable/keypad_edit_text_background.xml" value="0.2574074074074074" />
         <entry key="app/src/main/res/drawable/keypad_ripple.xml" value="0.2777777777777778" />
         <entry key="app/src/main/res/drawable/start_button.xml" value="0.2574074074074074" />
+        <entry key="app/src/main/res/drawable/words_display.xml" value="0.25277777777777777" />
+        <entry key="app/src/main/res/drawable/words_selection_background.xml" value="0.2777777777777778" />
         <entry key="app/src/main/res/layout/fragment_numbers_display.xml" value="0.19296370063906482" />
-        <entry key="app/src/main/res/layout/fragment_numbers_keypad.xml" value="0.2233259965301993" />
+        <entry key="app/src/main/res/layout/fragment_numbers_keypad.xml" value="0.5046454307277519" />
         <entry key="app/src/main/res/layout/fragment_numbers_start.xml" value="0.1766304347826087" />
+        <entry key="app/src/main/res/layout/fragment_words_display.xml" value="0.25132539184036823" />
+        <entry key="app/src/main/res/layout/fragment_words_selection.xml" value="0.2342664284063558" />
+        <entry key="app/src/main/res/layout/fragment_words_start.xml" value="0.12993920972644377" />
         <entry key="app/src/main/res/layout/timer.xml" value="0.1766304347826087" />
         <entry key="app/src/main/res/layout/win_lose_layout.xml" value="0.12993920972644377" />
       </map>
