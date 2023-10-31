@@ -3,22 +3,22 @@
 A bunch of memory games:
 
 	*card-based
-	*number-based (divyansh)
-	*word-based (divyansh)
+	*number-based
+	*word-based
 
 Welcome Screen
 ---- play button --->
 MainActivity =>
 	
-* Fragment showing arrows pointint to what each button in bottom nav means
-	* then each buttons leads to respective fragment showing up
+* Fragment showing arrows pointing to what each button in the bottom nav means
+	* then, each button leads to a respective fragment showing up
 	
 * will be implemented later on:
-	* Top left has hamburger icon, which opens up hamburger menu
+	* The top left has a hamburger icon, which opens up the hamburger menu
 
-		* header has game icon, and shows name of game
+		* header has a game icon and shows name of game
 			
-		* game outcomes (win/lose? which game was played? when?) 
+		* game outcomes (win/lose? Which game was played? When?) 
 			
 		* settings
 			
