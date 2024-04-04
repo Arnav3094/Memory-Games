@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.arnav.memorygames">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <supports-screens
         android:smallScreens="true"
@@ -9,8 +8,7 @@
         android:normalScreens="true"
         android:xlargeScreens="true"
         android:resizeable="true"
-        android:anyDensity="true"
-        />
+        android:anyDensity="true" />
 
     <application
         android:allowBackup="true"
@@ -29,6 +27,7 @@
         <!-- The three lines 'configChanges ...... ignore...' below (under android:name...) are responsible for making the activity portrait only -->
         <activity
             android:name=".Activity_WelcomeScreen"
+            android:exported="true"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:noHistory="true"

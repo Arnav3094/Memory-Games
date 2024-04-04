@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WordsFragment_Selection">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Note that tools:textColour - black has been used here but the actual colour will be white-->
+        <TextView
+            android:id="@+id/typeTheNumber"
+            style="@style/typeTheNumber"
+            android:text="@string/choose_the_correct_words"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:textColor="@color/black" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/words_selection_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/timeRemainingText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/typeTheNumber">
+
+
+            <LinearLayout
+                android:id="@+id/row1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button1"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Table" />
+
+                <Button
+                    android:id="@+id/button2"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Notebook" />
+
+                <Button
+                    android:id="@+id/button3"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Furniture" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button4"
+                    style="@style/wordButton"
+
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Table" />
+
+                <Button
+                    android:id="@+id/button5"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Shampoo" />
+
+                <Button
+                    android:id="@+id/button6"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Computer" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button7"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Camera" />
+
+                <Button
+                    android:id="@+id/button8"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Diary" />
+
+                <Button
+                    android:id="@+id/button9"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Clouds" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button10"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Raincoat" />
+
+                <Button
+                    android:id="@+id/button11"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Rubber" />
+
+                <Button
+                    android:id="@+id/button12"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Pen" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button13"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Glass" />
+
+                <Button
+                    android:id="@+id/button14"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Mouse" />
+
+                <Button
+                    android:id="@+id/button15"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Table" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button16"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Cap" />
+
+                <Button
+                    android:id="@+id/button17"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Chair" />
+
+                <Button
+                    android:id="@+id/button18"
+                    style="@style/wordButton"
+                    android:background="@drawable/selected_word_box"
+                    tools:text="Toooodle" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/timeRemainingText"
+            style="@style/textAboveTimer"
+            android:text="@string/time_remaining"
+            app:layout_constraintBottom_toTopOf="@+id/wordsSelectionTimer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/wordsSelectionTimer"
+            layout="@layout/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/helpIcon"
+            style="@style/helpIconStyle"
+            android:text="\?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.99" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
