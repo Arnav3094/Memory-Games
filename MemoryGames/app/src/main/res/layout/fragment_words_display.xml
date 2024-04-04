@@ -16,10 +16,11 @@
             android:background="@drawable/words_display"
             android:orientation="vertical"
             android:gravity="center"
-            app:layout_constraintBottom_toTopOf="@+id/wordsDisappear"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3">
 
             <LinearLayout
                 android:id="@+id/row1"
@@ -32,22 +33,16 @@
                 <TextView
                     android:id="@+id/word1"
                     style="@style/wordElement"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     tools:text="Table" />
 
                 <TextView
                     android:id="@+id/word2"
                     style="@style/wordElement"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     tools:text="Diary" />
 
                 <TextView
                     android:id="@+id/word3"
                     style="@style/wordElement"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     tools:text="Tissue"/>
 
             </LinearLayout>
@@ -63,15 +58,11 @@
                 <TextView
                     android:id="@+id/word4"
                     style="@style/wordElement"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     tools:text="Watch"/>
 
                 <TextView
                     android:id="@+id/word5"
                     style="@style/wordElement"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     tools:text="Camera" />
 
             </LinearLayout>
@@ -87,22 +78,16 @@
                 <TextView
                     android:id="@+id/word6"
                     style="@style/wordElement"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     tools:text="Bottle"/>
 
                 <TextView
                     android:id="@+id/word7"
                     style="@style/wordElement"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     tools:text="Brush"/>
 
                 <TextView
                     android:id="@+id/word8"
                     style="@style/wordElement"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     tools:text="Shampoo"/>
 
             </LinearLayout>
@@ -115,7 +100,8 @@
             android:text="@string/words_will_disappear_in"
             app:layout_constraintBottom_toTopOf="@+id/wordsDisplayTimer"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
 
         <include
             android:id="@+id/wordsDisplayTimer"
@@ -148,7 +134,8 @@
             app:layout_constraintHorizontal_bias="0.99"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.99" />
+            app:layout_constraintVertical_bias="0.99"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
